@@ -64,7 +64,7 @@ class Parser:
         self.index = 0
         for line in input_file:
             no_comment = line.split(Parser.COMMENT_SYNTAX)[0]
-            valid_code = no_comment.strip("\n")
+            valid_code = no_comment.strip("\t\n")
             if valid_code:
                 self.lines.append(valid_code)
 
@@ -144,6 +144,7 @@ class Parser:
             return line.strip(" ")
 
         str_arr = line.split(" ")
+        str_arr = [word for word in str_arr if word]
         if len(str_arr) > 1:
             return str_arr[1]
 
@@ -160,6 +161,8 @@ class Parser:
         line = self.lines[self.index]
 
         str_arr = line.split(" ")
+        str_arr = [word for word in str_arr if word]
+
         if len(str_arr) > 2:
             return int(str_arr[2])
 

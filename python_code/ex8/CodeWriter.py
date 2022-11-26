@@ -233,7 +233,7 @@ class CodeWriter:
         shiftleft = \
             "@x\n" + \
             "D=M;\n" + \
-            "D=<<D;\n"
+            "D=D<<;\n"
 
         return "// shiftleft ///////////////////////\n" + CodeWriter.POP_VALUE_X + shiftleft + CodeWriter.PUSH_D
 
@@ -242,7 +242,7 @@ class CodeWriter:
         shiftright = \
             "@x\n" + \
             "D=M;\n" + \
-            "D=>>D;\n"
+            "D=D>>;\n"
 
         return "// shiftright ///////////////////////\n" + CodeWriter.POP_VALUE_X + shiftright + CodeWriter.PUSH_D
 
