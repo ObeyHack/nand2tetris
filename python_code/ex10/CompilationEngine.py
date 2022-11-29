@@ -15,6 +15,9 @@ class CompilationEngine:
     output stream.
     """
 
+    SPECIAL_GRAMMAR_TYPE = "50000"
+    ERROR_MSG = "its my error :) invalid syntax :) go fix it :("
+
     def __init__(self, input_stream: JackTokenizer, output_stream: typing.TextIO) -> None:
         """
         Creates a new compilation engine with the given input and output. The
@@ -27,29 +30,25 @@ class CompilationEngine:
         # output_stream.write("Hello world! \n")
         self.input_stream = input_stream
         self.output_stream = output_stream
-
         self.count_tabs = 0
+
+        self.compile_class()
 
     def compile_class(self) -> None:
         """Compiles a complete class."""
         # Your code goes here!
-
-        word = "classVarDec"
+        word = "class"
         self.write_to_file(word, True)
         self.count_tabs += 1
+        self.handle_words(["class"])
+        self.compile_identifier()
+        self.handle_words(["{"])
 
-        self.handle_word("class")
-
-        compile_idntifier()
-
-        self.handle_word("{")
-
+        # TODO *
         self.compile_class_var_dec()
-
         self.compile_subroutine()
 
-        self.handle_word("}")
-
+        self.handle_words(["}"])
         self.count_tabs -= 1
         self.write_to_file(word, False)
 
@@ -59,7 +58,14 @@ class CompilationEngine:
         word = "classVarDec"
         self.write_to_file(word, True)
         self.count_tabs += 1
+        self.handle_words(["static", "field"])
+        self.compile_type()
 
+        # TODO *
+        self.handle_words([","])
+        self.compile_identifier()
+
+        self.handle_words([";"])
         self.count_tabs -= 1
         self.write_to_file(word, False)
 
@@ -73,6 +79,16 @@ class CompilationEngine:
         word = "subroutineDec"
         self.write_to_file(word, True)
         self.count_tabs += 1
+
+        self.handle_words(["constructor", "function", "method"])
+        self.handle_either(["void"], [CompilationEngine.SPECIAL_GRAMMAR_TYPE])
+
+        self.compile_identifier()
+        self.handle_words(["("])
+        self.compile_parameter_list()
+        self.handle_words([")"])
+
+        self.compile_subroutine_body()
 
         self.count_tabs -= 1
         self.write_to_file(word, False)
@@ -95,7 +111,15 @@ class CompilationEngine:
         word = "varDec"
         self.write_to_file(word, True)
         self.count_tabs += 1
+        self.handle_words(["var"])
+        self.compile_type()
+        self.compile_identifier()
 
+        # TODO *
+        self.handle_words([","])
+        self.compile_identifier()
+
+        self.handle_words([";"])
         self.count_tabs -= 1
         self.write_to_file(word, False)
 
@@ -194,29 +218,76 @@ class CompilationEngine:
         self.count_tabs -= 1
         self.write_to_file(word, False)
 
-    def write_to_file(self, word: str, is_open: bool):
+
+    def compile_type(self) -> None:
+        self.handle_words(["int", "char", "boolean"])
+        self.compile_identifier()
+
+    def compile_identifier(self) -> None:
+        if not (self.input_stream.token_type() == "IDENTIFIER"):
+            raise Exception(CompilationEngine.ERROR_MSG)
+
         tabs = "\t" * self.count_tabs
-        if is_open:
-            self.output_stream.write(tabs + f"<{word}>\n")
+        output = tabs + f"<{self.input_stream.token_type().lower()}> " \
+                        f"{self.typed_lexical_element(self.input_stream.token_type())} " \
+                        f"</{self.input_stream.token_type().lower()}>\n"
+        self.output_stream.write(output)
 
-        else:
-            self.output_stream.write(tabs + f"</{word}>\n")
+        if self.input_stream.has_more_tokens():
+            self.input_stream.advance()
 
-    def handle_word(self, word: str) -> None:
+    def compile_subroutine_body(self) -> None:
+        self.handle_words(["{"])
+
+        # TODO *
+        self.compile_var_dec()
+
+        self.compile_statements()
+        self.handle_words(["}"])
+
+    def handle_either(self, words, special_grammar):
+        try:
+            self.handle_words(words)
+
+        except:
+            self.handle_special_grammar(special_grammar)
+
+    def handle_words(self, words) -> None:
+        for word in words:
+            if self.handle_word(word):
+                return
+
+        # TODO
+        raise Exception(CompilationEngine.ERROR_MSG)
+
+    def handle_special_grammar(self, special_grammar):
+        try:
+            if not special_grammar:
+                raise Exception(CompilationEngine.ERROR_MSG)
+
+            if special_grammar[-1] == CompilationEngine.SPECIAL_GRAMMAR_TYPE:
+                self.compile_type()
+        except:
+            special_grammar.pop()
+            self.handle_special_grammar(special_grammar)
+
+    def handle_word(self, word: str) -> bool:
         token_type = JackTokenizer.lexical_element(word)
         if not (self.input_stream.token_type() == token_type and
-                self.typed_lexical_element(token_type) is word.upper()):
-            return  # TODO add error
+                self.typed_lexical_element(token_type) == word):
+            return False
 
         if self.input_stream.has_more_tokens():
             self.input_stream.advance()
 
         tabs = "\t" * self.count_tabs
-        self.output_stream.write(tabs + f"<{token_type}> {word} </{token_type}>\n")
+        output = tabs + f"<{token_type.lower()}> {word} </{token_type.lower()}>\n"
+        self.output_stream.write(output)
+        return True
 
     def typed_lexical_element(self, token_type: str):
         if token_type == "KEYWORD":
-            return self.input_stream.keyword()
+            return self.input_stream.keyword().lower()
 
         elif token_type == "IDENTIFIER":
             return self.input_stream.identifier()
@@ -229,3 +300,13 @@ class CompilationEngine:
 
         elif token_type == "STRING_CONST":
             return self.input_stream.string_val()
+
+    def write_to_file(self, word: str, is_open: bool) -> None:
+        tabs = "\t" * self.count_tabs
+        if is_open:
+            output = tabs + f"<{word}>\n"
+
+        else:
+            output = tabs + f"</{word}>\n"
+
+        self.output_stream.write(output)

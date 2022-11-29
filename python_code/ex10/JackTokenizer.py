@@ -314,7 +314,7 @@ class JackTokenizer:
         """
         # Your code goes here!
         token = self.tokens[self.index]
-        return token.upper()
+        return token[0].upper()
 
     def symbol(self) -> str:
         """
@@ -326,7 +326,8 @@ class JackTokenizer:
               '-' | '*' | '/' | '&' | '|' | '<' | '>' | '=' | '~' | '^' | '#'
         """
         # Your code goes here!
-        return self.tokens[self.index]
+        token = self.tokens[self.index]
+        return token[0]
 
     def identifier(self) -> str:
         """
@@ -339,7 +340,8 @@ class JackTokenizer:
                   identifiers, so 'self' cannot be an identifier, etc'.
         """
         # Your code goes here!
-        return self.tokens[self.index]
+        token = self.tokens[self.index]
+        return token[0]
 
     def int_val(self) -> int:
         """
@@ -350,7 +352,8 @@ class JackTokenizer:
             integerConstant: A decimal number in the range 0-32767.
         """
         # Your code goes here!
-        return int(self.tokens[self.index])
+        token = self.tokens[self.index]
+        return int(token[0])
 
     def string_val(self) -> str:
         """
@@ -362,4 +365,5 @@ class JackTokenizer:
                       double quote or newline '"'
         """
         # Your code goes here!
-        return self.tokens[self.index]
+        token = self.tokens[self.index]
+        return token[0]
