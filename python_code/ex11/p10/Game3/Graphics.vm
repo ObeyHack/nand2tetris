@@ -1,0 +1,200 @@
+call Screen.drawRectangle 0
+call Screen.drawRectangle 0
+call Screen.drawRectangle 0
+call Screen.drawRectangle 0
+call Screen.setColor 0
+push const 40
+add
+push const 11
+add
+push const 40
+add
+push const 29
+add
+call Screen.drawLine 0
+call Screen.setColor 0
+push const 10
+add
+push const 10
+add
+push const 70
+add
+push const 30
+add
+call Graphics.drawEmptyRect 0
+push const 25
+add
+push const 15
+add
+push const 50
+add
+push const 25
+add
+call Graphics.drawEmptyRect 0
+call Screen.setColor 0
+push const 11
+add
+push const 40
+add
+push const 29
+add
+push const 40
+add
+call Screen.drawLine 0
+call Screen.setColor 0
+push const 10
+add
+push const 10
+add
+push const 30
+add
+push const 70
+add
+call Graphics.drawEmptyRect 0
+push const 15
+add
+push const 25
+add
+push const 25
+add
+push const 50
+add
+call Graphics.drawEmptyRect 0
+call Screen.setColor 0
+push const 20
+add
+push const 2
+add
+push const 6
+add
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+sub
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+add
+call Screen.drawLine 0
+push const 38
+add
+push const 6
+sub
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+sub
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+add
+call Screen.drawLine 0
+push const 20
+add
+push const 2
+add
+push const 6
+add
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+add
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+add
+call Screen.drawLine 0
+push const 38
+add
+push const 6
+sub
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+sub
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+sub
+call Screen.drawLine 0
+call Screen.setColor 0
+push const 1
+add
+push const 1
+add
+push const 1
+add
+push const 5
+add
+call Screen.drawLine 0
+push const 2
+add
+push const 1
+add
+push const 5
+add
+push const 1
+add
+call Screen.drawLine 0
+push const 39
+add
+push const 1
+add
+push const 35
+add
+push const 1
+add
+call Screen.drawLine 0
+push const 39
+add
+push const 1
+add
+push const 39
+add
+push const 5
+add
+call Screen.drawLine 0
+push const 1
+add
+push const 35
+add
+push const 1
+add
+push const 39
+add
+call Screen.drawLine 0
+push const 1
+add
+push const 39
+add
+push const 5
+add
+push const 39
+add
+call Screen.drawLine 0
+push const 39
+add
+push const 35
+add
+push const 39
+add
+push const 39
+add
+call Screen.drawLine 0
+push const 35
+add
+push const 39
+add
+push const 39
+add
+push const 39
+add
+call Screen.drawLine 0

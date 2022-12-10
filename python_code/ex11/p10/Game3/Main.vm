@@ -1,0 +1,233 @@
+call Presets.init 0
+call Main.mainMenu 0
+call Presets.destroy 0
+push const 51
+eq
+push const 0
+call Screen.clearScreen 0
+push const 0
+push const 0
+call Output.moveCursor 2
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+push const 0
+eq
+call .keyPressed 0
+push const 49
+eq
+push const 0
+call Main.instructions 0
+call Output.printString 0
+call Output.println 0
+push const 0
+eq
+call .keyPressed 0
+push const 50
+eq
+call .chooseGame 0
+call .new 0
+call game.run 0
+call game.dispose 0
+push const 0
+push const 52
+eq
+call Main.credits 0
+push const 0
+push const 81
+eq
+push const 113
+eq
+or
+push const 51
+call Screen.clearScreen 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Screen.clearScreen 0
+push const 0
+push const 0
+call Output.moveCursor 2
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.println 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.printString 0
+call Output.println 0
+call Screen.clearScreen 0
+push const 0
+push const 0
+call Output.moveCursor 2
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call .readInt 0
+push const 1
+lt
+push const 12
+gt
+or
+call Output.println 0
+call Output.printString 0
+call Output.println 0
+call .readInt 0
+push const 1
+sub
+push const 0
+push const 18
+lt
+push const 1
+add
+call Screen.clearScreen 0
+push const 0
+gt
+push const 19
+lt
+and
+push const 19
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 1
+gt
+push const 20
+lt
+and
+push const 20
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 2
+gt
+push const 21
+lt
+and
+push const 21
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 3
+gt
+push const 22
+lt
+and
+push const 22
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 4
+gt
+push const 23
+lt
+and
+push const 23
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 5
+gt
+push const 24
+lt
+and
+push const 24
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 7
+gt
+push const 25
+lt
+and
+push const 25
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 8
+gt
+push const 26
+lt
+and
+push const 26
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 9
+gt
+push const 27
+lt
+and
+push const 27
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 10
+gt
+push const 28
+lt
+and
+push const 28
+sub
+push const 0
+call Output.moveCursor 1
+call Output.println 0
+call Output.printString 0
+push const 5000
+call Sys.wait 1

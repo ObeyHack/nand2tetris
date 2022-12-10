@@ -1,0 +1,617 @@
+add
+add
+add
+add
+call Screen.drawLine -4
+add
+add
+add
+add
+call Screen.drawLine -4
+call RushHourGraphics.drawLine 0
+call RushHourGraphics.drawLine 0
+call RushHourGraphics.drawLine 0
+call RushHourGraphics.drawLines4v 0
+call RushHourGraphics.drawLines4v 0
+call Screen.setColor 0
+push const 40
+push const 6
+push const 40
+push const 34
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 9
+push const 6
+push const 60
+push const 6
+push const 71
+push const 11
+push const 71
+push const 28
+push const 60
+push const 34
+push const 9
+push const 34
+call RushHourGraphics.drawHexagon 12
+push const 12
+push const 12
+push const 18
+push const 8
+push const 24
+push const 11
+push const 24
+push const 29
+push const 18
+push const 32
+push const 12
+push const 28
+call RushHourGraphics.drawHexagon 12
+push const 24
+push const 11
+push const 45
+push const 11
+push const 45
+push const 29
+push const 24
+push const 29
+call RushHourGraphics.drawLines4v 8
+push const 18
+push const 8
+push const 50
+push const 8
+push const 54
+push const 20
+push const 50
+push const 32
+call RushHourGraphics.drawLines4v 8
+push const 45
+push const 11
+push const 50
+push const 8
+call RushHourGraphics.drawLine 4
+push const 45
+push const 29
+push const 50
+push const 32
+call RushHourGraphics.drawLine 4
+push const 50
+push const 32
+push const 18
+push const 32
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 1
+add
+push const 1
+add
+push const 79
+add
+push const 39
+add
+call Screen.drawRectangle 0
+push const 1
+add
+push const 1
+add
+push const 39
+add
+push const 79
+add
+call Screen.drawRectangle 0
+call Screen.setColor 0
+push const 40
+push const 1
+push const 40
+push const 39
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 40
+push const 6
+push const 40
+push const 34
+call RushHourGraphics.drawLine 4
+push const 80
+push const 10
+push const 80
+push const 30
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 85
+push const 6
+push const 100
+push const 6
+push const 109
+push const 14
+push const 109
+push const 26
+push const 100
+push const 34
+push const 85
+push const 34
+call RushHourGraphics.drawHexagon 12
+push const 10
+push const 6
+push const 78
+push const 6
+push const 78
+push const 34
+push const 10
+push const 34
+call RushHourGraphics.drawLines4v 8
+push const 10
+push const 6
+push const 10
+push const 34
+call RushHourGraphics.drawLine 4
+push const 78
+push const 10
+push const 85
+push const 10
+call RushHourGraphics.drawLine 4
+push const 78
+push const 30
+push const 85
+push const 30
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 1
+add
+push const 1
+add
+push const 119
+add
+push const 39
+add
+call Screen.drawRectangle 0
+push const 1
+add
+push const 1
+add
+push const 39
+add
+push const 119
+add
+call Screen.drawRectangle 0
+call Screen.setColor 0
+push const 40
+push const 1
+push const 40
+push const 39
+call RushHourGraphics.drawLine 4
+push const 80
+push const 1
+push const 80
+push const 39
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 40
+push const 6
+push const 40
+push const 34
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 24
+add
+push const 12
+add
+push const 45
+add
+push const 28
+add
+call Screen.drawRectangle 0
+push const 9
+push const 6
+push const 60
+push const 6
+push const 71
+push const 11
+push const 71
+push const 28
+push const 60
+push const 34
+push const 9
+push const 34
+call RushHourGraphics.drawHexagon 12
+push const 12
+push const 12
+push const 18
+push const 8
+push const 24
+push const 11
+push const 24
+push const 29
+push const 18
+push const 32
+push const 12
+push const 28
+call RushHourGraphics.drawHexagon 12
+push const 24
+push const 11
+push const 45
+push const 11
+push const 45
+push const 29
+push const 24
+push const 29
+call RushHourGraphics.drawLines4v 8
+push const 18
+push const 8
+push const 50
+push const 8
+push const 54
+push const 20
+push const 50
+push const 32
+call RushHourGraphics.drawLines4v 8
+push const 45
+push const 11
+push const 50
+push const 8
+call RushHourGraphics.drawLine 4
+push const 45
+push const 29
+push const 50
+push const 32
+call RushHourGraphics.drawLine 4
+push const 50
+push const 32
+push const 18
+push const 32
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 1
+add
+push const 1
+add
+push const 79
+add
+push const 39
+add
+call Screen.drawRectangle 0
+call Screen.setColor 0
+push const 40
+push const 1
+push const 40
+push const 39
+call RushHourGraphics.drawLine 4
+call Screen.setColor 0
+push const 20
+add
+push const 2
+add
+push const 6
+add
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+sub
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+add
+call Screen.drawLine 0
+push const 38
+add
+push const 6
+sub
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+sub
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+add
+call Screen.drawLine 0
+push const 20
+add
+push const 2
+add
+push const 6
+add
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+add
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+add
+call Screen.drawLine 0
+push const 38
+add
+push const 6
+sub
+call Screen.drawLine 0
+push const 3
+sub
+push const 3
+sub
+call Screen.drawLine 0
+push const 3
+add
+push const 3
+sub
+call Screen.drawLine 0
+call Screen.setColor 0
+push const 1
+add
+push const 1
+add
+push const 1
+add
+push const 5
+add
+call Screen.drawLine 0
+push const 2
+add
+push const 1
+add
+push const 5
+add
+push const 1
+add
+call Screen.drawLine 0
+push const 39
+add
+push const 1
+add
+push const 35
+add
+push const 1
+add
+call Screen.drawLine 0
+push const 39
+add
+push const 1
+add
+push const 39
+add
+push const 5
+add
+call Screen.drawLine 0
+push const 1
+add
+push const 35
+add
+push const 1
+add
+push const 39
+add
+call Screen.drawLine 0
+push const 1
+add
+push const 39
+add
+push const 5
+add
+push const 39
+add
+call Screen.drawLine 0
+push const 39
+add
+push const 35
+add
+push const 39
+add
+push const 39
+add
+call Screen.drawLine 0
+push const 35
+add
+push const 39
+add
+push const 39
+add
+push const 39
+add
+call Screen.drawLine 0
+call Screen.setColor 0
+push const 2
+call Math.divide 2
+add
+push const 3
+call Math.divide 2
+add
+push const 3
+call Math.divide 2
+add
+call Screen.drawLine -3
+push const 3
+call Math.divide 2
+add
+push const 3
+call Math.divide 2
+add
+push const 3
+call Math.divide 2
+add
+call Screen.drawLine -3
+push const 3
+call Math.divide 2
+add
+push const 5
+push const 18
+call Math.divide 2
+call Math.multiply 2
+add
+push const 2
+push const 3
+call Math.divide 2
+call Math.multiply 2
+add
+call Screen.drawLine -3
+push const 5
+push const 18
+call Math.divide 2
+call Math.multiply 2
+add
+push const 2
+push const 3
+call Math.divide 2
+call Math.multiply 2
+add
+push const 9
+call Math.divide 2
+add
+add
+call Screen.drawLine -4
+push const 9
+call Math.divide 2
+add
+add
+push const 2
+call Math.divide 2
+add
+push const 7
+call Math.multiply 2
+push const 9
+call Math.divide 2
+add
+call Screen.drawLine -4
+push const 2
+call Math.divide 2
+add
+push const 7
+call Math.multiply 2
+push const 9
+call Math.divide 2
+add
+push const 8
+push const 9
+call Math.divide 2
+call Math.multiply 2
+add
+add
+call Screen.drawLine -4
+push const 8
+push const 9
+call Math.divide 2
+call Math.multiply 2
+add
+add
+push const 14
+push const 18
+call Math.divide 2
+call Math.multiply 2
+add
+push const 2
+push const 3
+call Math.divide 2
+call Math.multiply 2
+add
+call Screen.drawLine -4
+push const 14
+push const 18
+call Math.divide 2
+call Math.multiply 2
+add
+push const 2
+push const 3
+call Math.divide 2
+call Math.multiply 2
+add
+add
+push const 3
+call Math.divide 2
+add
+call Screen.drawLine -4
+add
+push const 3
+call Math.divide 2
+add
+push const 2
+push const 3
+call Math.divide 2
+call Math.multiply 2
+add
+push const 3
+call Math.divide 2
+add
+call Screen.drawLine -4
+push const 2
+push const 3
+call Math.divide 2
+call Math.multiply 2
+add
+push const 3
+call Math.divide 2
+add
+push const 2
+call Math.divide 2
+add
+call Screen.drawLine -3
+call RushHourGraphics.drawStar 0
+push const 7
+push const 18
+call Math.divide 2
+call Math.multiply 2
+add
+push const 4
+push const 9
+call Math.divide 2
+call Math.multiply 2
+add
+push const 18
+call Math.divide 2
+call Screen.drawCircle -2
+push const 11
+push const 18
+call Math.divide 2
+call Math.multiply 2
+add
+push const 4
+push const 9
+call Math.divide 2
+call Math.multiply 2
+add
+push const 18
+call Math.divide 2
+call Screen.drawCircle -2
+call Screen.clearScreen 0
+push const 1
+push const 3
+call Output.moveCursor 2
+call Screen.setColor 0
+call Output.printString 0
+push const 40
+push const 40
+push const 40
+call RushHourGraphics.drawStar 3
+push const 200
+push const 40
+push const 40
+call RushHourGraphics.drawEyedStar 3
+push const 450
+push const 40
+push const 40
+call RushHourGraphics.drawStar 3
+push const 100
+push const 100
+push const 100
+call RushHourGraphics.drawEyedStar 3
+push const 300
+push const 100
+push const 100
+call RushHourGraphics.drawStar 3
+push const 40
+push const 200
+push const 20
+call RushHourGraphics.drawStar 3
+push const 450
+push const 200
+push const 20
+call RushHourGraphics.drawStar 3
+push const 20
+push const 20
+call Output.moveCursor 2
+call Output.printString 0
+call .keyPressed 0
+push const 0
+eq

@@ -1,0 +1,29 @@
+push const 12
+call .new 0
+push const 0
+lt
+push const 36
+call .new 1
+push const 1
+add
+push const 0
+push const 1
+push const 2
+push const 3
+push const 4
+push const 5
+push const 6
+push const 7
+push const 8
+push const 9
+push const 10
+push const 11
+lt
+call Output.printString 0
+call Output.println 0
+call .new 0
+push const 0
+lt
+call s.dispose 0
+push const 1
+add

@@ -1,0 +1,332 @@
+push const 40
+push const 236
+push const 8
+push const 0
+push const 1
+push const 2
+push const 3
+push const 4
+push const 45
+push const 0
+push const 0
+call setCursor 2
+call .get 0
+call drawBoard 0
+call drawCursor 0
+push const 113
+eq
+push const 81
+eq
+and
+and
+push const 0
+push const 0
+eq
+call .keyPressed 0
+call drawCursor 0
+push const 131
+eq
+push const 0
+eq
+push const 1
+sub
+call setCursor 0
+push const 130
+eq
+push const 0
+eq
+push const 1
+sub
+call setCursor 0
+push const 133
+eq
+push const 5
+eq
+push const 1
+add
+call setCursor 0
+push const 132
+eq
+push const 5
+eq
+push const 1
+add
+call setCursor 0
+push const 32
+eq
+call  0
+call move 0
+call drawCursor 0
+push const 2
+push const 5
+call .get 2
+push const 100
+eq
+call RushHourGraphics.victory 0
+call board.dispose 0
+call  0
+push const 2
+call .get 0
+push const 0
+push const 114
+eq
+push const 100
+eq
+or
+eq
+push const 1
+add
+call .get 0
+push const 42
+eq
+push const 3
+lt
+push const 1
+sub
+add
+add
+call .get -1
+call board.set -1
+push const 1
+add
+add
+push const 1
+sub
+call board.set -1
+push const 1
+sub
+call setCursor 0
+push const 1
+sub
+eq
+push const 1
+sub
+call .get 0
+push const 1
+sub
+push const 42
+eq
+push const 3
+push const 1
+sub
+lt
+push const 1
+add
+sub
+sub
+call .get -1
+call board.set -1
+push const 1
+add
+sub
+push const 1
+add
+call board.set -1
+push const 1
+add
+call setCursor 0
+push const 2
+add
+sub
+eq
+push const 1
+add
+call .get 0
+push const 42
+eq
+push const 3
+lt
+push const 1
+sub
+add
+add
+call .get -1
+call board.set -1
+push const 1
+add
+add
+push const 1
+sub
+call board.set -1
+push const 1
+sub
+call setCursor 0
+push const 1
+sub
+eq
+push const 1
+sub
+call .get 0
+push const 1
+sub
+push const 42
+eq
+push const 3
+push const 1
+sub
+lt
+push const 1
+add
+sub
+sub
+call .get -1
+call board.set -1
+push const 1
+add
+push const 1
+add
+sub
+call board.set -1
+push const 1
+add
+call setCursor 0
+sub
+push const 2
+add
+call drawVehicle 0
+call drawVehicle 0
+call  0
+eq
+push const 0
+gt
+and
+push const 1
+sub
+call .get 0
+eq
+eq
+push const 5
+lt
+and
+push const 1
+add
+call .get 0
+eq
+eq
+push const 0
+gt
+and
+push const 1
+sub
+call .get 0
+eq
+eq
+push const 5
+lt
+and
+push const 1
+add
+call .get 0
+eq
+call .get 0
+push const 60
+eq
+push const 114
+eq
+or
+push const 62
+eq
+push const 100
+eq
+or
+push const 94
+eq
+push const 118
+eq
+call  0
+call drawCrossHairs 0
+eq
+call drawArrowCursor 0
+push const 40
+call Math.multiply 2
+add
+push const 40
+call Math.multiply 2
+add
+call RushHourGraphics.drawCrossHairs -2
+call Screen.clearScreen 0
+push const 0
+call Screen.setColor 0
+push const 241
+lt
+add
+push const 240
+add
+add
+call Screen.drawLine -2
+add
+push const 240
+add
+call Screen.drawLine 0
+push const 40
+add
+push const 240
+add
+push const 81
+add
+push const 240
+add
+push const 119
+add
+call Screen.drawLine 0
+push const 239
+add
+push const 81
+add
+push const 239
+add
+push const 119
+add
+call Screen.drawLine 0
+push const 0
+push const 6
+lt
+push const 0
+push const 6
+lt
+call .checkVehicle 0
+push const 0
+eq
+push const 2
+push const 3
+eq
+push const 4
+eq
+or
+push const 3
+push const 2
+eq
+push const 4
+eq
+or
+push const 5
+eq
+call drawVehicle 0
+push const 1
+add
+push const 1
+add
+eq
+eq
+or
+eq
+eq
+or
+push const 40
+call Math.multiply 2
+add
+push const 40
+call Math.multiply 2
+add
+call RushHourGraphics.drawArrowCursor -2
+push const 40
+call Math.multiply 2
+add
+push const 40
+call Math.multiply 2
+add
+push const 2
+eq
+call RushHourGraphics.drawRedCar 0
+call RushHourGraphics.drawCar 0
+call RushHourGraphics.drawTruck 0
