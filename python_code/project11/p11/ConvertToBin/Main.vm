@@ -13,6 +13,8 @@ pop temp 0
 push constant 0
 return
 function Main.convert 3
+push constant 0
+not
 pop local 2
 label l0
 push local 2
@@ -62,6 +64,7 @@ pop temp 0
 label l4
 goto l5
 label l2
+push constant 0
 pop local 2
 label l5
 goto l0
