@@ -1,0 +1,503 @@
+function Main.main 0
+call Presets.init 0
+pop temp 0
+call Main.mainMenu 0
+pop temp 0
+call Presets.destroy 0
+pop temp 0
+push constant 0
+return
+function Main.mainMenu 1
+label l0
+push local 0
+push constant 51
+eq
+not
+not
+if-goto l1
+push constant 0
+pop local 0
+call Screen.clearScreen 0
+pop temp 0
+push constant 0
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+label l2
+push local 0
+push constant 0
+eq
+not
+if-goto l3
+call Keyboard.keyPressed 0
+pop local 0
+goto l2
+label l3
+push local 0
+push constant 49
+eq
+not
+if-goto l4
+push constant 0
+pop local 0
+call Main.instructions 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+label l5
+push local 0
+push constant 0
+eq
+not
+if-goto l6
+call Keyboard.keyPressed 0
+pop local 0
+goto l5
+label l6
+goto l7
+label l4
+label l7
+push local 0
+push constant 50
+eq
+not
+if-goto l8
+call Main.chooseGame 0
+call Game.new 0
+call game.run 0
+pop temp 0
+call game.dispose 0
+pop temp 0
+push constant 0
+pop local 0
+goto l9
+label l8
+label l9
+push local 0
+push constant 52
+eq
+not
+if-goto l10
+call Main.credits 0
+pop temp 0
+push constant 0
+pop local 0
+goto l11
+label l10
+label l11
+push local 0
+push constant 81
+eq
+push local 0
+push constant 113
+eq
+or
+not
+if-goto l12
+push constant 51
+pop local 0
+goto l13
+label l12
+label l13
+goto l0
+label l1
+call Screen.clearScreen 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 0
+return
+function Main.instructions 0
+call Screen.clearScreen 0
+pop temp 0
+push constant 0
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 0
+return
+function Main.chooseGame 1
+call Screen.clearScreen 0
+pop temp 0
+push constant 0
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Keyboard.readInt 0
+pop local 0
+label l14
+push local 0
+push constant 1
+lt
+push local 0
+push constant 12
+gt
+or
+not
+if-goto l15
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+call Keyboard.readInt 0
+pop local 0
+goto l14
+label l15
+push local 0
+push constant 1
+sub
+return
+function Main.credits 1
+push constant 0
+pop local 0
+label l16
+push local 0
+push constant 18
+lt
+not
+if-goto l17
+push local 0
+push constant 1
+add
+pop local 0
+call Screen.clearScreen 0
+pop temp 0
+push local 0
+push constant 0
+gt
+push local 0
+push constant 19
+lt
+and
+not
+if-goto l18
+push constant 19
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l19
+label l18
+label l19
+push local 0
+push constant 1
+gt
+push local 0
+push constant 20
+lt
+and
+not
+if-goto l20
+push constant 20
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l21
+label l20
+label l21
+push local 0
+push constant 2
+gt
+push local 0
+push constant 21
+lt
+and
+not
+if-goto l22
+push constant 21
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l23
+label l22
+label l23
+push local 0
+push constant 3
+gt
+push local 0
+push constant 22
+lt
+and
+not
+if-goto l24
+push constant 22
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l25
+label l24
+label l25
+push local 0
+push constant 4
+gt
+push local 0
+push constant 23
+lt
+and
+not
+if-goto l26
+push constant 23
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l27
+label l26
+label l27
+push local 0
+push constant 5
+gt
+push local 0
+push constant 24
+lt
+and
+not
+if-goto l28
+push constant 24
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l29
+label l28
+label l29
+push local 0
+push constant 7
+gt
+push local 0
+push constant 25
+lt
+and
+not
+if-goto l30
+push constant 25
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l31
+label l30
+label l31
+push local 0
+push constant 8
+gt
+push local 0
+push constant 26
+lt
+and
+not
+if-goto l32
+push constant 26
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l33
+label l32
+label l33
+push local 0
+push constant 9
+gt
+push local 0
+push constant 27
+lt
+and
+not
+if-goto l34
+push constant 27
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l35
+label l34
+label l35
+push local 0
+push constant 10
+gt
+push local 0
+push constant 28
+lt
+and
+not
+if-goto l36
+push constant 28
+push local 0
+sub
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+call Output.println 0
+pop temp 0
+call Output.printString 0
+pop temp 0
+goto l37
+label l36
+label l37
+goto l16
+label l17
+push constant 5000
+call Sys.wait 1
+pop temp 0
+push constant 0
+return

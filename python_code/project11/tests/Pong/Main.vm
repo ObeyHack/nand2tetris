@@ -1,0 +1,124 @@
+<class>
+  <keyword> class </keyword>
+  <identifier>
+    <name>  </name>
+    <category> class </category>
+  </identifier>
+  <symbol> { </symbol>
+  <subroutineDec>
+    <keyword> function </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <name>  </name>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <varDec>
+        <keyword> var </keyword>
+        <identifier>
+          <name>  </name>
+          <category>  </category>
+          <index> -1 </index>
+          <isDefined> False </isDefined>
+        </identifier>
+        <identifier>
+          <name>  </name>
+          <category> class </category>
+        </identifier>
+        <symbol> ; </symbol>
+      </varDec>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <name> . </name>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <name>  </name>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier>
+            <name>  </name>
+            <category>  </category>
+            <index> -1 </index>
+            <isDefined> False </isDefined>
+          </identifier>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <name> . </name>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <name>  </name>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+              </expressionList>
+              <symbol> ) </symbol>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <name> . </name>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <name>  </name>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <name> . </name>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <name>  </name>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol> } </symbol>
+</class>

@@ -1,0 +1,75 @@
+function Presets.init 1
+push constant 12
+pop  0
+push  0
+call Array.new 1
+push constant 0
+pop local 0
+label l0
+push local 0
+push  0
+lt
+not
+if-goto l1
+push local 0
+push constant 36
+call String.new 1
+push local 0
+push constant 1
+add
+pop local 0
+goto l0
+label l1
+push constant 0
+push constant 1
+push constant 2
+push constant 3
+push constant 4
+push constant 5
+push constant 6
+push constant 7
+push constant 8
+push constant 9
+push constant 10
+push constant 11
+push constant 0
+return
+function Presets.get 0
+push argument 0
+push  0
+lt
+not
+not
+if-goto l2
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+push  
+return
+goto l3
+label l2
+label l3
+push argument 0
+call Board.new 1
+return
+function Presets.destroy 1
+push constant 0
+pop local 0
+label l4
+push local 0
+push  0
+lt
+not
+if-goto l5
+push local 0
+call s.dispose 0
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto l4
+label l5
+push constant 0
+return

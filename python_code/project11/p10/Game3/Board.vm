@@ -1,0 +1,227 @@
+function Board.new 1
+push constant 0
+call Memory.alloc 1
+pop pointer 0
+push constant 1
+pop  0
+push constant 2
+pop  1
+push constant 3
+pop  2
+push constant 4
+pop  3
+push constant 5
+pop  4
+push constant 6
+call Array.new 1
+push constant 0
+pop local 0
+label l0
+push local 0
+push constant 6
+lt
+not
+if-goto l1
+push local 0
+push constant 6
+call Array.new 1
+push local 0
+push constant 1
+add
+pop local 0
+goto l0
+label l1
+call init 0
+pop temp 0
+push  
+return
+function Board.init 4
+push constant 0
+pop local 0
+label l2
+push local 0
+push constant 36
+lt
+not
+if-goto l3
+push local 0
+push constant 6
+call Math.divide 2
+pop local 1
+push local 0
+push constant 6
+call Board.modulus 2
+pop local 2
+push local 1
+push local 2
+push local 0
+call preset.charAt 1
+push local 0
+push constant 1
+add
+pop local 0
+goto l2
+label l3
+push constant 0
+return
+function Board.set 0
+push argument 0
+push argument 1
+push argument 2
+push constant 0
+return
+function Board.get 0
+push argument 0
+push argument 1
+return
+function Board.checkVehicle 2
+push argument 0
+push argument 1
+call get 2
+pop local 0
+push local 0
+push constant 60
+eq
+not
+if-goto l4
+push argument 0
+push argument 1
+push constant 1
+add
+call get 2
+pop local 1
+push local 1
+push constant 62
+eq
+not
+if-goto l5
+push  0
+return
+goto l6
+label l5
+label l6
+push  2
+return
+goto l7
+label l4
+label l7
+push local 0
+push constant 94
+eq
+not
+if-goto l8
+push argument 0
+push constant 1
+add
+push argument 1
+call get 2
+pop local 1
+push local 1
+push constant 118
+eq
+not
+if-goto l9
+push  1
+return
+goto l10
+label l9
+label l10
+push  3
+return
+goto l11
+label l8
+label l11
+push local 0
+push constant 114
+eq
+not
+if-goto l12
+push  4
+return
+goto l13
+label l12
+label l13
+push constant 0
+return
+function Board.modulus 0
+push argument 0
+push argument 1
+lt
+not
+if-goto l14
+push argument 0
+return
+goto l15
+label l14
+label l15
+push argument 0
+push argument 1
+sub
+push argument 1
+call Board.modulus 2
+return
+function Board.toString 3
+call Output.println 0
+pop temp 0
+push constant 0
+pop local 1
+call Output.printString 0
+pop temp 0
+call Output.println 0
+pop temp 0
+label l16
+push local 1
+push constant 6
+lt
+not
+if-goto l17
+push constant 0
+pop local 2
+push local 1
+label l18
+push local 2
+push constant 6
+lt
+not
+if-goto l19
+push local 2
+call Output.printChar 1
+pop temp 0
+push local 2
+push constant 1
+add
+pop local 2
+goto l18
+label l19
+push local 1
+push constant 1
+add
+pop local 1
+call Output.println 0
+pop temp 0
+goto l16
+label l17
+push constant 0
+return
+function Board.dispose 1
+push constant 0
+pop local 0
+label l20
+push local 0
+push constant 6
+lt
+not
+if-goto l21
+push local 0
+call temp.dispose 0
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto l20
+label l21
+call board.dispose 0
+pop temp 0
+push constant 0
+return

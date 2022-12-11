@@ -1,0 +1,1051 @@
+function Game.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop  0
+push constant 40
+pop  3
+push constant 0
+pop  0
+push constant 0
+pop  1
+push constant 236
+pop  2
+push constant 8
+pop  3
+push constant 0
+pop  8
+push constant 1
+pop  4
+push constant 2
+pop  5
+push constant 3
+pop  6
+push constant 4
+pop  7
+push constant 45
+pop  9
+push constant 0
+push constant 0
+call setCursor 2
+pop temp 0
+push  
+return
+function Game.run 2
+push constant 0
+pop local 1
+push  0
+call Presets.get 1
+call drawBoard 0
+pop temp 0
+push constant 0
+call drawCursor 0
+pop temp 0
+label l0
+push local 0
+push constant 113
+eq
+not
+push local 0
+push constant 81
+eq
+not
+and
+push local 1
+not
+and
+not
+if-goto l1
+push constant 0
+pop local 0
+label l2
+push local 0
+push constant 0
+eq
+not
+if-goto l3
+call Keyboard.keyPressed 0
+pop local 0
+goto l2
+label l3
+push constant 0
+call drawCursor 0
+pop temp 0
+push local 0
+push constant 131
+eq
+not
+if-goto l4
+push  1
+push constant 0
+eq
+not
+not
+if-goto l5
+push  1
+push constant 1
+sub
+push  2
+call setCursor 2
+pop temp 0
+goto l6
+label l5
+label l6
+goto l7
+label l4
+label l7
+push local 0
+push constant 130
+eq
+not
+if-goto l8
+push  2
+push constant 0
+eq
+not
+if-goto l9
+goto l10
+label l9
+push  1
+push  2
+push constant 1
+sub
+call setCursor 2
+pop temp 0
+label l10
+goto l11
+label l8
+label l11
+push local 0
+push constant 133
+eq
+not
+if-goto l12
+push  1
+push constant 5
+eq
+not
+not
+if-goto l13
+push  1
+push constant 1
+add
+push  2
+call setCursor 2
+pop temp 0
+goto l14
+label l13
+label l14
+goto l15
+label l12
+label l15
+push local 0
+push constant 132
+eq
+not
+if-goto l16
+push  2
+push constant 5
+eq
+not
+not
+if-goto l17
+push  1
+push  2
+push constant 1
+add
+call setCursor 2
+pop temp 0
+goto l18
+label l17
+label l18
+goto l19
+label l16
+label l19
+push local 0
+push constant 32
+eq
+not
+if-goto l20
+push  1
+push  2
+call isValid 2
+not
+if-goto l21
+call move 0
+pop temp 0
+goto l22
+label l21
+label l22
+goto l23
+label l20
+label l23
+push constant 0
+call drawCursor 0
+pop temp 0
+push constant 2
+push constant 5
+call board.get 2
+push constant 100
+eq
+not
+if-goto l24
+call RushHourGraphics.victory 0
+pop temp 0
+push constant 0
+pop local 1
+goto l25
+label l24
+label l25
+goto l0
+label l1
+call board.dispose 0
+pop temp 0
+push constant 0
+return
+function Game.move 10
+push  1
+push  2
+call getDir 2
+pop local 0
+push constant 2
+pop local 1
+push constant 0
+pop local 8
+push constant 0
+pop local 9
+push  1
+pop local 2
+push  2
+pop local 3
+push  1
+pop local 4
+push  2
+pop local 5
+push  1
+push  2
+call board.get 2
+pop local 7
+push constant 0
+pop local 6
+push local 7
+push constant 114
+eq
+push local 7
+push constant 100
+eq
+or
+not
+if-goto l26
+push constant 0
+pop local 9
+goto l27
+label l26
+label l27
+push local 0
+push  6
+eq
+not
+if-goto l28
+push  1
+push  2
+push constant 1
+add
+call board.get 2
+pop local 7
+push local 7
+push constant 42
+eq
+not
+if-goto l29
+push constant 3
+pop local 1
+goto l30
+label l29
+label l30
+label l31
+push local 6
+push local 1
+lt
+not
+if-goto l32
+push  1
+push  2
+push constant 1
+sub
+push local 6
+add
+push  1
+push  2
+push local 6
+add
+call board.get 2
+call board.set 2
+pop temp 0
+push local 6
+push constant 1
+add
+pop local 6
+goto l31
+label l32
+push  1
+push  2
+push local 1
+add
+push constant 1
+sub
+push  9
+call board.set 3
+pop temp 0
+push  1
+push  2
+push constant 1
+sub
+call setCursor 2
+pop temp 0
+push local 3
+push constant 1
+sub
+pop local 3
+goto l33
+label l28
+label l33
+push local 0
+push  7
+eq
+not
+if-goto l34
+push  1
+push  2
+push constant 1
+sub
+call board.get 2
+pop local 7
+push local 5
+push constant 1
+sub
+pop local 5
+push local 7
+push constant 42
+eq
+not
+if-goto l35
+push constant 3
+pop local 1
+push local 5
+push constant 1
+sub
+pop local 5
+goto l36
+label l35
+label l36
+label l37
+push local 6
+push local 1
+lt
+not
+if-goto l38
+push  1
+push  2
+push constant 1
+add
+push local 6
+sub
+push  1
+push  2
+push local 6
+sub
+call board.get 2
+call board.set 2
+pop temp 0
+push local 6
+push constant 1
+add
+pop local 6
+goto l37
+label l38
+push  1
+push  2
+push local 1
+sub
+push constant 1
+add
+push  9
+call board.set 3
+pop temp 0
+push  1
+push  2
+push constant 1
+add
+call setCursor 2
+pop temp 0
+push local 3
+push constant 2
+add
+push local 1
+sub
+pop local 3
+goto l39
+label l34
+label l39
+push local 0
+push  4
+eq
+not
+if-goto l40
+push  1
+push constant 1
+add
+push  2
+call board.get 2
+pop local 7
+push constant 0
+pop local 8
+push local 7
+push constant 42
+eq
+not
+if-goto l41
+push constant 3
+pop local 1
+goto l42
+label l41
+label l42
+label l43
+push local 6
+push local 1
+lt
+not
+if-goto l44
+push  1
+push constant 1
+sub
+push local 6
+add
+push  2
+push  1
+push local 6
+add
+push  2
+call board.get 2
+call board.set 2
+pop temp 0
+push local 6
+push constant 1
+add
+pop local 6
+goto l43
+label l44
+push  1
+push local 1
+add
+push constant 1
+sub
+push  2
+push  9
+call board.set 3
+pop temp 0
+push  1
+push constant 1
+sub
+push  2
+call setCursor 2
+pop temp 0
+push local 2
+push constant 1
+sub
+pop local 2
+goto l45
+label l40
+label l45
+push local 0
+push  5
+eq
+not
+if-goto l46
+push  1
+push constant 1
+sub
+push  2
+call board.get 2
+pop local 7
+push constant 0
+pop local 8
+push local 4
+push constant 1
+sub
+pop local 4
+push local 7
+push constant 42
+eq
+not
+if-goto l47
+push constant 3
+pop local 1
+push local 4
+push constant 1
+sub
+pop local 4
+goto l48
+label l47
+label l48
+label l49
+push local 6
+push local 1
+lt
+not
+if-goto l50
+push  1
+push constant 1
+add
+push local 6
+sub
+push  2
+push  1
+push local 6
+sub
+push  2
+call board.get 2
+call board.set 2
+pop temp 0
+push local 6
+push constant 1
+add
+pop local 6
+goto l49
+label l50
+push  1
+push constant 1
+add
+push local 1
+sub
+push  2
+push  9
+call board.set 3
+pop temp 0
+push  1
+push constant 1
+add
+push  2
+call setCursor 2
+pop temp 0
+push local 2
+push local 1
+sub
+push constant 2
+add
+pop local 2
+goto l51
+label l46
+label l51
+push local 1
+push local 8
+push local 4
+push local 5
+push local 9
+push constant 0
+call drawVehicle 5
+pop temp 0
+push local 1
+push local 8
+push local 2
+push local 3
+push local 9
+push constant 0
+call drawVehicle 5
+pop temp 0
+push constant 0
+return
+function Game.isValid 2
+push argument 0
+push argument 1
+call getDir 2
+pop local 0
+push local 0
+push  6
+eq
+push argument 1
+push constant 0
+gt
+and
+not
+if-goto l52
+push argument 0
+push argument 1
+push constant 1
+sub
+call board.get 2
+pop local 1
+push local 1
+push  9
+eq
+not
+if-goto l53
+push constant 0
+return
+goto l54
+label l53
+label l54
+goto l55
+label l52
+label l55
+push local 0
+push  7
+eq
+push argument 1
+push constant 5
+lt
+and
+not
+if-goto l56
+push argument 0
+push argument 1
+push constant 1
+add
+call board.get 2
+pop local 1
+push local 1
+push  9
+eq
+not
+if-goto l57
+push constant 0
+return
+goto l58
+label l57
+label l58
+goto l59
+label l56
+label l59
+push local 0
+push  4
+eq
+push argument 0
+push constant 0
+gt
+and
+not
+if-goto l60
+push argument 0
+push constant 1
+sub
+push argument 1
+call board.get 2
+pop local 1
+push local 1
+push  9
+eq
+not
+if-goto l61
+push constant 0
+return
+goto l62
+label l61
+label l62
+goto l63
+label l60
+label l63
+push local 0
+push  5
+eq
+push argument 0
+push constant 5
+lt
+and
+not
+if-goto l64
+push argument 0
+push constant 1
+add
+push argument 1
+call board.get 2
+pop local 1
+push local 1
+push  9
+eq
+not
+if-goto l65
+push constant 0
+return
+goto l66
+label l65
+label l66
+goto l67
+label l64
+label l67
+push constant 0
+return
+function Game.setCursor 0
+push argument 0
+pop  1
+push argument 1
+pop  2
+push constant 0
+return
+function Game.getDir 2
+push  8
+pop local 1
+push argument 0
+push argument 1
+call board.get 2
+pop local 0
+push local 0
+push constant 60
+eq
+push local 0
+push constant 114
+eq
+or
+not
+if-goto l68
+push  6
+pop local 1
+goto l69
+label l68
+push local 0
+push constant 62
+eq
+push local 0
+push constant 100
+eq
+or
+not
+if-goto l70
+push  7
+pop local 1
+goto l71
+label l70
+push local 0
+push constant 94
+eq
+not
+if-goto l72
+push  4
+pop local 1
+goto l73
+label l72
+push local 0
+push constant 118
+eq
+not
+if-goto l74
+push  5
+pop local 1
+goto l75
+label l74
+label l75
+label l73
+label l71
+label l69
+push local 1
+return
+function Game.drawCursor 1
+push  1
+push  2
+call getDir 2
+pop local 0
+push  1
+push  2
+push argument 0
+call drawCrossHairs 3
+pop temp 0
+push local 0
+push  8
+eq
+not
+not
+if-goto l76
+push  1
+push  2
+push local 0
+push argument 0
+call drawArrowCursor 4
+pop temp 0
+goto l77
+label l76
+label l77
+push constant 0
+return
+function Game.drawCrossHairs 0
+push  2
+push constant 40
+push argument 1
+call Math.multiply 2
+add
+push  3
+push constant 40
+push argument 0
+call Math.multiply 2
+add
+push argument 2
+call RushHourGraphics.drawCrossHairs 3
+pop temp 0
+push constant 0
+return
+function Game.drawBoard 8
+call Screen.clearScreen 0
+pop temp 0
+push constant 0
+pop local 1
+push constant 0
+call Screen.setColor 0
+pop temp 0
+label l78
+push local 1
+push constant 241
+lt
+not
+if-goto l79
+push  2
+push  3
+push local 1
+add
+push  2
+push constant 240
+add
+push  3
+push local 1
+add
+call Screen.drawLine 4
+pop temp 0
+push  2
+push local 1
+add
+pop local 0
+push local 0
+push  3
+push local 0
+push  3
+push constant 240
+add
+call Screen.drawLine 4
+pop temp 0
+push local 1
+push constant 40
+add
+pop local 1
+goto l78
+label l79
+push  2
+push constant 240
+add
+push  3
+push constant 81
+add
+push  2
+push constant 240
+add
+push  3
+push constant 119
+add
+call Screen.drawLine 4
+pop temp 0
+push  2
+push constant 239
+add
+push  3
+push constant 81
+add
+push  2
+push constant 239
+add
+push  3
+push constant 119
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+pop local 2
+label l80
+push local 2
+push constant 6
+lt
+not
+if-goto l81
+push constant 0
+pop local 3
+label l82
+push local 3
+push constant 6
+lt
+not
+if-goto l83
+push local 2
+push local 3
+call board.checkVehicle 2
+pop local 5
+push local 5
+push constant 0
+eq
+not
+not
+if-goto l84
+push constant 2
+pop local 4
+push  0
+pop local 7
+push constant 0
+pop local 6
+push local 5
+push constant 3
+eq
+push local 5
+push constant 4
+eq
+or
+not
+if-goto l85
+push constant 3
+pop local 4
+goto l86
+label l85
+label l86
+push local 5
+push constant 2
+eq
+push local 5
+push constant 4
+eq
+or
+not
+if-goto l87
+push  1
+pop local 7
+goto l88
+label l87
+label l88
+push local 5
+push constant 5
+eq
+not
+if-goto l89
+push constant 0
+pop local 6
+goto l90
+label l89
+label l90
+push local 4
+push local 7
+push local 2
+push local 3
+push local 6
+push constant 0
+call drawVehicle 5
+pop temp 0
+goto l91
+label l84
+label l91
+push local 3
+push constant 1
+add
+pop local 3
+goto l82
+label l83
+push local 2
+push constant 1
+add
+pop local 2
+goto l80
+label l81
+push constant 0
+return
+function Game.drawArrowCursor 2
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+push argument 2
+push  5
+eq
+push argument 2
+push  4
+eq
+or
+not
+if-goto l92
+push constant 0
+pop local 0
+goto l93
+label l92
+label l93
+push argument 2
+push  7
+eq
+push argument 2
+push  5
+eq
+or
+not
+if-goto l94
+push constant 0
+pop local 1
+goto l95
+label l94
+label l95
+push  2
+push constant 40
+push argument 1
+call Math.multiply 2
+add
+push  3
+push constant 40
+push argument 0
+call Math.multiply 2
+add
+push local 0
+push local 1
+push argument 3
+call RushHourGraphics.drawArrowCursor 5
+pop temp 0
+push constant 0
+return
+function Game.drawVehicle 2
+push  2
+push constant 40
+push argument 3
+call Math.multiply 2
+add
+pop local 0
+push  3
+push constant 40
+push argument 2
+call Math.multiply 2
+add
+pop local 1
+push argument 0
+push constant 2
+eq
+not
+if-goto l96
+push argument 4
+not
+if-goto l97
+push local 0
+push local 1
+push argument 5
+call RushHourGraphics.drawRedCar 3
+pop temp 0
+goto l98
+label l97
+push local 0
+push local 1
+push argument 1
+push argument 5
+call RushHourGraphics.drawCar 4
+pop temp 0
+label l98
+goto l99
+label l96
+push local 0
+push local 1
+push argument 1
+push argument 5
+call RushHourGraphics.drawTruck 4
+pop temp 0
+label l99
+push constant 0
+return
+function Game.dispose 0
+push constant 0
+return
