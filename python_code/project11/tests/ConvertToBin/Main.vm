@@ -15,6 +15,7 @@ push constant 0
 return
 function Main.convert 3
 push constant 0
+not
 pop local 2
 label l0
 push local 2

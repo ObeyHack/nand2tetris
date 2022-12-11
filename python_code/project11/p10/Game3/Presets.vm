@@ -45,7 +45,6 @@ call Output.printString 0
 pop temp 0
 call Output.println 0
 pop temp 0
-push  
 return
 goto l3
 label l2

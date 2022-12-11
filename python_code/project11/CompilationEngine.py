@@ -559,12 +559,8 @@ class CompilationEngine:
 
                             except TypeError:
                                 try:
-                                    keyword = self.typed_lexical_element(self.input_stream.token_type())
-                                    keyword_output = self.compile_keyword_const(True)
-                                    segment, index = self.switch_case_keyword(keyword)
-                                    self.vm_writer.write_push(segment, index)
-                                    #if keyword == "true":
-                                    #    self.vm_writer.write_arithmetic(VMWriter.NOT)
+                                    keyword_output, keyword = self.compile_keyword_const(True)
+                                    self.switch_case_keyword(keyword)
                                     output += keyword_output
 
                                 except TypeError:
@@ -697,9 +693,10 @@ class CompilationEngine:
         output += self.handle_words(["]"])
         return output
 
-    def compile_keyword_const(self, first_word=False) -> str:
+    def compile_keyword_const(self, first_word=False) -> tuple[str, str]:
+        keyword = self.typed_lexical_element(self.input_stream.token_type())
         output = self.handle_words(["true", "false", "null", "this"], first_word)
-        return output
+        return output, keyword
 
     def compile_op(self, first_word=False):
         op_symbol = self.typed_lexical_element(self.input_stream.token_type())
@@ -1037,12 +1034,12 @@ class CompilationEngine:
         # "true", "false", "null", "this"
 
         if keyword == "true":
-            return VMWriter.CONST, "0"
+            self.vm_writer.write_push(VMWriter.CONST, "0")
+            self.vm_writer.write_arithmetic("NOT")
 
         elif keyword == "false":
-            return VMWriter.CONST, "0"
+            self.vm_writer.write_push(VMWriter.CONST, "0")
 
-        return "", ""
 
     def kind_to_segment(self, kind) -> str:
         if kind == SymbolTable.VAR:

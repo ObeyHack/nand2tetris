@@ -33,7 +33,6 @@ goto l0
 label l1
 call init 0
 pop temp 0
-push  
 return
 function Board.init 4
 push constant 0

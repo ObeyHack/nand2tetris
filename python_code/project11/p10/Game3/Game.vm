@@ -7,6 +7,7 @@ pop  0
 push constant 40
 pop  3
 push constant 0
+not
 pop  0
 push constant 0
 pop  1
@@ -30,7 +31,6 @@ push constant 0
 push constant 0
 call setCursor 2
 pop temp 0
-push  
 return
 function Game.run 2
 push constant 0
@@ -70,6 +70,7 @@ pop local 0
 goto l2
 label l3
 push constant 0
+not
 call drawCursor 0
 pop temp 0
 push local 0
@@ -194,6 +195,7 @@ if-goto l24
 call RushHourGraphics.victory 0
 pop temp 0
 push constant 0
+not
 pop local 1
 goto l25
 label l24
@@ -212,6 +214,7 @@ pop local 0
 push constant 2
 pop local 1
 push constant 0
+not
 pop local 8
 push constant 0
 pop local 9
@@ -239,6 +242,7 @@ or
 not
 if-goto l26
 push constant 0
+not
 pop local 9
 goto l27
 label l26
@@ -553,6 +557,7 @@ push local 2
 push local 3
 push local 9
 push constant 0
+not
 call drawVehicle 5
 pop temp 0
 push constant 0
@@ -583,6 +588,7 @@ eq
 not
 if-goto l53
 push constant 0
+not
 return
 goto l54
 label l53
@@ -611,6 +617,7 @@ eq
 not
 if-goto l57
 push constant 0
+not
 return
 goto l58
 label l57
@@ -639,6 +646,7 @@ eq
 not
 if-goto l61
 push constant 0
+not
 return
 goto l62
 label l61
@@ -667,6 +675,7 @@ eq
 not
 if-goto l65
 push constant 0
+not
 return
 goto l66
 label l65
@@ -789,6 +798,7 @@ pop temp 0
 push constant 0
 pop local 1
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 label l78
@@ -921,6 +931,7 @@ eq
 not
 if-goto l89
 push constant 0
+not
 pop local 6
 goto l90
 label l89
@@ -931,6 +942,7 @@ push local 2
 push local 3
 push local 6
 push constant 0
+not
 call drawVehicle 5
 pop temp 0
 goto l91
@@ -952,8 +964,10 @@ push constant 0
 return
 function Game.drawArrowCursor 2
 push constant 0
+not
 pop local 0
 push constant 0
+not
 pop local 1
 push argument 2
 push  5

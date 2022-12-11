@@ -111,6 +111,7 @@ push constant 34
 call RushHourGraphics.drawLine 7
 pop temp 0
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 push argument 2
@@ -245,6 +246,7 @@ call Screen.drawRectangle 4
 pop temp 0
 label l6
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 push argument 2
@@ -287,6 +289,7 @@ push constant 30
 call RushHourGraphics.drawLine 7
 pop temp 0
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 push argument 2
@@ -391,6 +394,7 @@ call Screen.drawRectangle 4
 pop temp 0
 label l12
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 push argument 2
@@ -424,6 +428,7 @@ push constant 0
 call Screen.setColor 0
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 40
@@ -433,6 +438,7 @@ push constant 34
 call RushHourGraphics.drawLine 6
 pop temp 0
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 push argument 0
@@ -450,6 +456,7 @@ add
 call Screen.drawRectangle 4
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 9
@@ -467,6 +474,7 @@ push constant 34
 call RushHourGraphics.drawHexagon 14
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 12
@@ -484,6 +492,7 @@ push constant 28
 call RushHourGraphics.drawHexagon 14
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 24
@@ -497,6 +506,7 @@ push constant 29
 call RushHourGraphics.drawLines4v 10
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 18
@@ -510,6 +520,7 @@ push constant 32
 call RushHourGraphics.drawLines4v 10
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 45
@@ -519,6 +530,7 @@ push constant 8
 call RushHourGraphics.drawLine 6
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 45
@@ -528,6 +540,7 @@ push constant 32
 call RushHourGraphics.drawLine 6
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 50
@@ -561,9 +574,11 @@ add
 call Screen.drawRectangle 4
 pop temp 0
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 push constant 0
+not
 push argument 0
 push argument 1
 push constant 40
@@ -859,6 +874,7 @@ push constant 0
 return
 function RushHourGraphics.drawStar 0
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 push argument 0
@@ -1137,6 +1153,7 @@ push constant 3
 call Output.moveCursor 2
 pop temp 0
 push constant 0
+not
 call Screen.setColor 0
 pop temp 0
 call Output.printString 0
