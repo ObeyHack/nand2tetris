@@ -1,5 +1,5 @@
 function Board.new 1
-push constant 0
+push constant 1
 call Memory.alloc 1
 pop pointer 0
 push constant 1
@@ -14,6 +14,7 @@ push constant 5
 pop  4
 push constant 6
 call Array.new 1
+pop  0
 push constant 0
 pop local 0
 label l0
@@ -25,16 +26,20 @@ if-goto l1
 push local 0
 push constant 6
 call Array.new 1
+pop  0
 push local 0
 push constant 1
 add
 pop local 0
 goto l0
 label l1
-call init 0
+push argument 0
+call init 1
 pop temp 0
 return
-function Board.init 4
+function Board.init 5
+push argument 0
+pop pointer 0
 push constant 0
 pop local 0
 label l2
@@ -51,10 +56,15 @@ push local 0
 push constant 6
 call Board.modulus 2
 pop local 2
+push  0
 push local 1
+pop local 4
 push local 2
+push argument 0
 push local 0
-call preset.charAt 1
+push argument 0
+call charAt 1
+pop local 4
 push local 0
 push constant 1
 add
@@ -63,17 +73,29 @@ goto l2
 label l3
 push constant 0
 return
-function Board.set 0
+function Board.set 1
 push argument 0
+pop pointer 0
+push  0
+push argument 0
+pop local 0
 push argument 1
 push argument 2
+pop local 0
 push constant 0
 return
-function Board.get 0
+function Board.get 1
 push argument 0
+pop pointer 0
+push  0
+push argument 0
+pop local 0
+push local 0
 push argument 1
 return
 function Board.checkVehicle 2
+push argument 0
+pop pointer 0
 push argument 0
 push argument 1
 call get 2
@@ -159,7 +181,9 @@ sub
 push argument 1
 call Board.modulus 2
 return
-function Board.toString 3
+function Board.toString 4
+push argument 0
+pop pointer 0
 call Output.println 0
 pop temp 0
 push constant 0
@@ -176,15 +200,18 @@ not
 if-goto l17
 push constant 0
 pop local 2
+push  0
 push local 1
+pop local 3
 label l18
 push local 2
 push constant 6
 lt
 not
 if-goto l19
+push local 3
 push local 2
-call Output.printChar 1
+call Output.printChar 2
 pop temp 0
 push local 2
 push constant 1
@@ -202,25 +229,31 @@ goto l16
 label l17
 push constant 0
 return
-function Board.dispose 1
+function Board.dispose 2
+push argument 0
+pop pointer 0
 push constant 0
-pop local 0
+pop local 1
 label l20
-push local 0
+push local 1
 push constant 6
 lt
 not
 if-goto l21
+push  0
+push local 1
+pop local 0
 push local 0
-call temp.dispose 0
+call dispose 0
 pop temp 0
-push local 0
+push local 1
 push constant 1
 add
-pop local 0
+pop local 1
 goto l20
 label l21
-call board.dispose 0
+push  0
+call dispose 0
 pop temp 0
 push constant 0
 return

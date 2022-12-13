@@ -3,6 +3,7 @@ push constant 12
 pop  0
 push  0
 call Array.new 1
+pop  1
 push constant 0
 pop local 0
 label l0
@@ -14,6 +15,7 @@ if-goto l1
 push local 0
 push constant 36
 call String.new 1
+pop  1
 push local 0
 push constant 1
 add
@@ -21,20 +23,32 @@ pop local 0
 goto l0
 label l1
 push constant 0
+pop  1
 push constant 1
+pop  1
 push constant 2
+pop  1
 push constant 3
+pop  1
 push constant 4
+pop  1
 push constant 5
+pop  1
 push constant 6
+pop  1
 push constant 7
+pop  1
 push constant 8
+pop  1
 push constant 9
+pop  1
 push constant 10
+pop  1
 push constant 11
+pop  1
 push constant 0
 return
-function Presets.get 0
+function Presets.get 1
 push argument 0
 push  0
 lt
@@ -49,10 +63,13 @@ return
 goto l3
 label l2
 label l3
+push  1
 push argument 0
-call Board.new 1
+call Board.new 2
+pop local 0
+push local 0
 return
-function Presets.destroy 1
+function Presets.destroy 2
 push constant 0
 pop local 0
 label l4
@@ -61,8 +78,11 @@ push  0
 lt
 not
 if-goto l5
+push  1
 push local 0
-call s.dispose 0
+pop local 1
+push local 1
+call dispose 0
 pop temp 0
 push local 0
 push constant 1

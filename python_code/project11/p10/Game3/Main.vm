@@ -94,9 +94,12 @@ not
 if-goto l8
 call Main.chooseGame 0
 call Game.new 0
-call game.run 0
+pop  0
+push  0
+call run 0
 pop temp 0
-call game.dispose 0
+push  0
+call dispose 0
 pop temp 0
 push constant 0
 pop local 0

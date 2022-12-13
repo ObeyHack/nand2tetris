@@ -1,5 +1,5 @@
 function Game.new 0
-push constant 4
+push constant 5
 call Memory.alloc 1
 pop pointer 0
 push argument 0
@@ -33,10 +33,13 @@ call setCursor 2
 pop temp 0
 return
 function Game.run 2
+push argument 0
+pop pointer 0
 push constant 0
 pop local 1
 push  0
 call Presets.get 1
+pop  4
 call drawBoard 0
 pop temp 0
 push constant 0
@@ -185,9 +188,11 @@ label l23
 push constant 0
 call drawCursor 0
 pop temp 0
+push  4
 push constant 2
 push constant 5
-call board.get 2
+push  4
+call get 2
 push constant 100
 eq
 not
@@ -202,11 +207,14 @@ label l24
 label l25
 goto l0
 label l1
-call board.dispose 0
+push  4
+call dispose 0
 pop temp 0
 push constant 0
 return
 function Game.move 10
+push argument 0
+pop pointer 0
 push  1
 push  2
 call getDir 2
@@ -226,9 +234,11 @@ push  1
 pop local 4
 push  2
 pop local 5
+push  4
 push  1
 push  2
-call board.get 2
+push  4
+call get 2
 pop local 7
 push constant 0
 pop local 6
@@ -252,11 +262,13 @@ push  6
 eq
 not
 if-goto l28
+push  4
 push  1
 push  2
 push constant 1
 add
-call board.get 2
+push  4
+call get 2
 pop local 7
 push local 7
 push constant 42
@@ -280,12 +292,15 @@ push constant 1
 sub
 push local 6
 add
+push  4
 push  1
 push  2
 push local 6
 add
-call board.get 2
-call board.set 2
+push  4
+call get 2
+push  4
+call set 2
 pop temp 0
 push local 6
 push constant 1
@@ -300,7 +315,8 @@ add
 push constant 1
 sub
 push  9
-call board.set 3
+push  4
+call set 3
 pop temp 0
 push  1
 push  2
@@ -320,11 +336,13 @@ push  7
 eq
 not
 if-goto l34
+push  4
 push  1
 push  2
 push constant 1
 sub
-call board.get 2
+push  4
+call get 2
 pop local 7
 push local 5
 push constant 1
@@ -356,12 +374,15 @@ push constant 1
 add
 push local 6
 sub
+push  4
 push  1
 push  2
 push local 6
 sub
-call board.get 2
-call board.set 2
+push  4
+call get 2
+push  4
+call set 2
 pop temp 0
 push local 6
 push constant 1
@@ -376,7 +397,8 @@ sub
 push constant 1
 add
 push  9
-call board.set 3
+push  4
+call set 3
 pop temp 0
 push  1
 push  2
@@ -398,11 +420,13 @@ push  4
 eq
 not
 if-goto l40
+push  4
 push  1
 push constant 1
 add
 push  2
-call board.get 2
+push  4
+call get 2
 pop local 7
 push constant 0
 pop local 8
@@ -428,12 +452,15 @@ sub
 push local 6
 add
 push  2
+push  4
 push  1
 push local 6
 add
 push  2
-call board.get 2
-call board.set 2
+push  4
+call get 2
+push  4
+call set 2
 pop temp 0
 push local 6
 push constant 1
@@ -448,7 +475,8 @@ push constant 1
 sub
 push  2
 push  9
-call board.set 3
+push  4
+call set 3
 pop temp 0
 push  1
 push constant 1
@@ -468,11 +496,13 @@ push  5
 eq
 not
 if-goto l46
+push  4
 push  1
 push constant 1
 sub
 push  2
-call board.get 2
+push  4
+call get 2
 pop local 7
 push constant 0
 pop local 8
@@ -506,12 +536,15 @@ add
 push local 6
 sub
 push  2
+push  4
 push  1
 push local 6
 sub
 push  2
-call board.get 2
-call board.set 2
+push  4
+call get 2
+push  4
+call set 2
 pop temp 0
 push local 6
 push constant 1
@@ -526,7 +559,8 @@ push local 1
 sub
 push  2
 push  9
-call board.set 3
+push  4
+call set 3
 pop temp 0
 push  1
 push constant 1
@@ -564,6 +598,8 @@ push constant 0
 return
 function Game.isValid 2
 push argument 0
+pop pointer 0
+push argument 0
 push argument 1
 call getDir 2
 pop local 0
@@ -576,11 +612,13 @@ gt
 and
 not
 if-goto l52
+push  4
 push argument 0
 push argument 1
 push constant 1
 sub
-call board.get 2
+push  4
+call get 2
 pop local 1
 push local 1
 push  9
@@ -605,11 +643,13 @@ lt
 and
 not
 if-goto l56
+push  4
 push argument 0
 push argument 1
 push constant 1
 add
-call board.get 2
+push  4
+call get 2
 pop local 1
 push local 1
 push  9
@@ -634,11 +674,13 @@ gt
 and
 not
 if-goto l60
+push  4
 push argument 0
 push constant 1
 sub
 push argument 1
-call board.get 2
+push  4
+call get 2
 pop local 1
 push local 1
 push  9
@@ -663,11 +705,13 @@ lt
 and
 not
 if-goto l64
+push  4
 push argument 0
 push constant 1
 add
 push argument 1
-call board.get 2
+push  4
+call get 2
 pop local 1
 push local 1
 push  9
@@ -687,17 +731,23 @@ push constant 0
 return
 function Game.setCursor 0
 push argument 0
+pop pointer 0
+push argument 0
 pop  1
 push argument 1
 pop  2
 push constant 0
 return
 function Game.getDir 2
+push argument 0
+pop pointer 0
 push  8
 pop local 1
+push  4
 push argument 0
 push argument 1
-call board.get 2
+push  4
+call get 2
 pop local 0
 push local 0
 push constant 60
@@ -750,6 +800,8 @@ label l69
 push local 1
 return
 function Game.drawCursor 1
+push argument 0
+pop pointer 0
 push  1
 push  2
 call getDir 2
@@ -777,6 +829,8 @@ label l77
 push constant 0
 return
 function Game.drawCrossHairs 0
+push argument 0
+pop pointer 0
 push  2
 push constant 40
 push argument 1
@@ -793,6 +847,8 @@ pop temp 0
 push constant 0
 return
 function Game.drawBoard 8
+push argument 0
+pop pointer 0
 call Screen.clearScreen 0
 pop temp 0
 push constant 0
@@ -881,9 +937,11 @@ push constant 6
 lt
 not
 if-goto l83
+push  4
 push local 2
 push local 3
-call board.checkVehicle 2
+push  4
+call checkVehicle 2
 pop local 5
 push local 5
 push constant 0
@@ -963,6 +1021,8 @@ label l81
 push constant 0
 return
 function Game.drawArrowCursor 2
+push argument 0
+pop pointer 0
 push constant 0
 not
 pop local 0
@@ -1015,6 +1075,8 @@ pop temp 0
 push constant 0
 return
 function Game.drawVehicle 2
+push argument 0
+pop pointer 0
 push  2
 push constant 40
 push argument 3
@@ -1061,5 +1123,7 @@ label l99
 push constant 0
 return
 function Game.dispose 0
+push argument 0
+pop pointer 0
 push constant 0
 return
