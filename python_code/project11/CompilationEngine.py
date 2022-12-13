@@ -314,7 +314,7 @@ class CompilationEngine:
             self.compile_expression()
             output += self.handle_words(["]"])
             self.vm_writer.write_arithmetic("ADD")
-            self.vm_writer.write_pop(VMWriter.POINTER, 1)
+
 
         self.count_tabs = tabs
 
@@ -325,6 +325,9 @@ class CompilationEngine:
         output += self.handle_words([";"])
 
         if is_arr:
+            self.vm_writer.write_pop(VMWriter.TEMP, 0)
+            self.vm_writer.write_pop(VMWriter.POINTER, 1)
+            self.vm_writer.write_push(VMWriter.TEMP, 0)
             self.vm_writer.write_pop(VMWriter.THAT, 0)
 
         else:
