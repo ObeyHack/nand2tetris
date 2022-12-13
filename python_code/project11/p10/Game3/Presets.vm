@@ -1,60 +1,311 @@
 function Presets.init 1
 push constant 12
-pop  0
-push  0
+pop static 0
+push static 0
 call Array.new 1
-pop  1
+pop static 1
 push constant 0
 pop local 0
 label l0
 push local 0
-push  0
+push static 0
 lt
 not
 if-goto l1
+push static 1
 push local 0
+add
 push constant 36
 call String.new 1
-pop  1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0
 push constant 1
 add
 pop local 0
 goto l0
 label l1
+push static 1
 push constant 0
-pop  1
-push constant 1
-pop  1
+add
 push constant 2
-pop  1
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 49
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
+push constant 1
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 50
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
+push constant 2
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 51
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 3
-pop  1
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 52
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 4
-pop  1
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 53
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 5
-pop  1
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 54
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 6
-pop  1
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 55
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 7
-pop  1
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 56
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 8
-pop  1
+add
+push constant 2
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 57
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 9
-pop  1
+add
+push constant 3
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 49
+call String.appendChar 1
+push constant 48
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 10
-pop  1
+add
+push constant 3
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 49
+call String.appendChar 1
+push constant 49
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1
 push constant 11
-pop  1
+add
+push constant 3
+call String.new 1
+push constant 83
+call String.appendChar 1
+push constant 49
+call String.appendChar 1
+push constant 50
+call String.appendChar 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 0
 return
 function Presets.get 1
 push argument 0
-push  0
+push static 0
 lt
 not
 not
 if-goto l2
+push constant 53
+call String.new 1
+push constant 80
+call String.appendChar 1
+push constant 114
+call String.appendChar 1
+push constant 101
+call String.appendChar 1
+push constant 115
+call String.appendChar 1
+push constant 101
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 115
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 58
+call String.appendChar 1
+push constant 58
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 69
+call String.appendChar 1
+push constant 114
+call String.appendChar 1
+push constant 114
+call String.appendChar 1
+push constant 111
+call String.appendChar 1
+push constant 114
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 45
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 97
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 101
+call String.appendChar 1
+push constant 109
+call String.appendChar 1
+push constant 112
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 111
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 97
+call String.appendChar 1
+push constant 99
+call String.appendChar 1
+push constant 99
+call String.appendChar 1
+push constant 101
+call String.appendChar 1
+push constant 115
+call String.appendChar 1
+push constant 115
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 105
+call String.appendChar 1
+push constant 110
+call String.appendChar 1
+push constant 101
+call String.appendChar 1
+push constant 120
+call String.appendChar 1
+push constant 105
+call String.appendChar 1
+push constant 115
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 97
+call String.appendChar 1
+push constant 110
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 98
+call String.appendChar 1
+push constant 111
+call String.appendChar 1
+push constant 97
+call String.appendChar 1
+push constant 114
+call String.appendChar 1
+push constant 100
+call String.appendChar 1
 call Output.printString 0
 pop temp 0
 call Output.println 0
@@ -63,8 +314,11 @@ return
 goto l3
 label l2
 label l3
-push  1
+push static 1
 push argument 0
+add
+pop pointer 1
+push that 0
 call Board.new 2
 pop local 0
 push local 0
@@ -74,12 +328,15 @@ push constant 0
 pop local 0
 label l4
 push local 0
-push  0
+push static 0
 lt
 not
 if-goto l5
-push  1
+push static 1
 push local 0
+add
+pop pointer 1
+push that 0
 pop local 1
 push local 1
 call dispose 0

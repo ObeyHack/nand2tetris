@@ -571,6 +571,7 @@ class CompilationEngine:
                         except TypeError:
                             try:
                                 output += self.compile_string_const(True)
+                                self.count_pushed += 1
 
                             except TypeError:
                                 try:
@@ -765,7 +766,6 @@ class CompilationEngine:
         output = self.handle_either(["int", "char", "boolean"], [CompilationEngine.SPECIAL_GRAMMAR_IDENTIFIER],
                                     first_word)
 
-        # TODO
         self.is_class_name = False
         return output
 
@@ -852,11 +852,15 @@ class CompilationEngine:
                 raise TypeError(CompilationEngine.ERROR_MSG)
             raise ValueError(CompilationEngine.BAD_ERROR_MSG)
 
+
         tabs = "  " * self.count_tabs
         remove = '"'
+        name = self.typed_lexical_element(self.input_stream.token_type()).strip(remove)
         output = tabs + f"<stringConstant> " \
-                        f"{self.typed_lexical_element(self.input_stream.token_type()).strip(remove)} " \
+                        f"{name} " \
                         f"</stringConstant>\n"
+
+        self.write_string_vm(name)
 
         if self.input_stream.has_more_tokens():
             self.input_stream.advance()
@@ -994,6 +998,15 @@ class CompilationEngine:
     def write_method_start(self):
         self.vm_writer.write_push(VMWriter.ARG, 0)
         self.vm_writer.write_pop(VMWriter.POINTER, 0)
+
+    def write_string_vm(self, word: str):
+        length = len(word)
+        self.vm_writer.write_push(VMWriter.CONST, length)
+        self.vm_writer.write_call("String.new", 1)
+        for i in range(length):
+            c = ord(word[i])
+            self.vm_writer.write_push(VMWriter.CONST, c)
+            self.vm_writer.write_call("String.appendChar", 2)
 
     def parse_xml_special(self, word):
         if word in CompilationEngine.XML_SPECIAL:

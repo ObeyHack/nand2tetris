@@ -3,30 +3,30 @@ push constant 5
 call Memory.alloc 1
 pop pointer 0
 push argument 0
-pop  0
+pop this 0
 push constant 40
-pop  3
+pop this 3
 push constant 0
 not
-pop  0
+pop static 0
 push constant 0
-pop  1
+pop static 1
 push constant 236
-pop  2
+pop static 2
 push constant 8
-pop  3
+pop static 3
 push constant 0
-pop  8
+pop static 8
 push constant 1
-pop  4
+pop static 4
 push constant 2
-pop  5
+pop static 5
 push constant 3
-pop  6
+pop static 6
 push constant 4
-pop  7
+pop static 7
 push constant 45
-pop  9
+pop static 9
 push constant 0
 push constant 0
 call setCursor 2
@@ -37,9 +37,9 @@ push argument 0
 pop pointer 0
 push constant 0
 pop local 1
-push  0
+push this 0
 call Presets.get 1
-pop  4
+pop this 4
 call drawBoard 0
 pop temp 0
 push constant 0
@@ -81,16 +81,16 @@ push constant 131
 eq
 not
 if-goto l4
-push  1
+push this 1
 push constant 0
 eq
 not
 not
 if-goto l5
-push  1
+push this 1
 push constant 1
 sub
-push  2
+push this 2
 call setCursor 2
 pop temp 0
 goto l6
@@ -104,15 +104,15 @@ push constant 130
 eq
 not
 if-goto l8
-push  2
+push this 2
 push constant 0
 eq
 not
 if-goto l9
 goto l10
 label l9
-push  1
-push  2
+push this 1
+push this 2
 push constant 1
 sub
 call setCursor 2
@@ -126,16 +126,16 @@ push constant 133
 eq
 not
 if-goto l12
-push  1
+push this 1
 push constant 5
 eq
 not
 not
 if-goto l13
-push  1
+push this 1
 push constant 1
 add
-push  2
+push this 2
 call setCursor 2
 pop temp 0
 goto l14
@@ -149,14 +149,14 @@ push constant 132
 eq
 not
 if-goto l16
-push  2
+push this 2
 push constant 5
 eq
 not
 not
 if-goto l17
-push  1
-push  2
+push this 1
+push this 2
 push constant 1
 add
 call setCursor 2
@@ -172,8 +172,8 @@ push constant 32
 eq
 not
 if-goto l20
-push  1
-push  2
+push this 1
+push this 2
 call isValid 2
 not
 if-goto l21
@@ -188,10 +188,10 @@ label l23
 push constant 0
 call drawCursor 0
 pop temp 0
-push  4
+push this 4
 push constant 2
 push constant 5
-push  4
+push this 4
 call get 2
 push constant 100
 eq
@@ -207,7 +207,7 @@ label l24
 label l25
 goto l0
 label l1
-push  4
+push this 4
 call dispose 0
 pop temp 0
 push constant 0
@@ -215,8 +215,8 @@ return
 function Game.move 10
 push argument 0
 pop pointer 0
-push  1
-push  2
+push this 1
+push this 2
 call getDir 2
 pop local 0
 push constant 2
@@ -226,18 +226,18 @@ not
 pop local 8
 push constant 0
 pop local 9
-push  1
+push this 1
 pop local 2
-push  2
+push this 2
 pop local 3
-push  1
+push this 1
 pop local 4
-push  2
+push this 2
 pop local 5
-push  4
-push  1
-push  2
-push  4
+push this 4
+push this 1
+push this 2
+push this 4
 call get 2
 pop local 7
 push constant 0
@@ -258,16 +258,16 @@ goto l27
 label l26
 label l27
 push local 0
-push  6
+push static 6
 eq
 not
 if-goto l28
-push  4
-push  1
-push  2
+push this 4
+push this 1
+push this 2
 push constant 1
 add
-push  4
+push this 4
 call get 2
 pop local 7
 push local 7
@@ -286,20 +286,20 @@ push local 1
 lt
 not
 if-goto l32
-push  1
-push  2
+push this 1
+push this 2
 push constant 1
 sub
 push local 6
 add
-push  4
-push  1
-push  2
+push this 4
+push this 1
+push this 2
 push local 6
 add
-push  4
+push this 4
 call get 2
-push  4
+push this 4
 call set 2
 pop temp 0
 push local 6
@@ -308,18 +308,18 @@ add
 pop local 6
 goto l31
 label l32
-push  1
-push  2
+push this 1
+push this 2
 push local 1
 add
 push constant 1
 sub
-push  9
-push  4
+push static 9
+push this 4
 call set 3
 pop temp 0
-push  1
-push  2
+push this 1
+push this 2
 push constant 1
 sub
 call setCursor 2
@@ -332,16 +332,16 @@ goto l33
 label l28
 label l33
 push local 0
-push  7
+push static 7
 eq
 not
 if-goto l34
-push  4
-push  1
-push  2
+push this 4
+push this 1
+push this 2
 push constant 1
 sub
-push  4
+push this 4
 call get 2
 pop local 7
 push local 5
@@ -368,20 +368,20 @@ push local 1
 lt
 not
 if-goto l38
-push  1
-push  2
+push this 1
+push this 2
 push constant 1
 add
 push local 6
 sub
-push  4
-push  1
-push  2
+push this 4
+push this 1
+push this 2
 push local 6
 sub
-push  4
+push this 4
 call get 2
-push  4
+push this 4
 call set 2
 pop temp 0
 push local 6
@@ -390,18 +390,18 @@ add
 pop local 6
 goto l37
 label l38
-push  1
-push  2
+push this 1
+push this 2
 push local 1
 sub
 push constant 1
 add
-push  9
-push  4
+push static 9
+push this 4
 call set 3
 pop temp 0
-push  1
-push  2
+push this 1
+push this 2
 push constant 1
 add
 call setCursor 2
@@ -416,16 +416,16 @@ goto l39
 label l34
 label l39
 push local 0
-push  4
+push static 4
 eq
 not
 if-goto l40
-push  4
-push  1
+push this 4
+push this 1
 push constant 1
 add
-push  2
-push  4
+push this 2
+push this 4
 call get 2
 pop local 7
 push constant 0
@@ -446,20 +446,20 @@ push local 1
 lt
 not
 if-goto l44
-push  1
+push this 1
 push constant 1
 sub
 push local 6
 add
-push  2
-push  4
-push  1
+push this 2
+push this 4
+push this 1
 push local 6
 add
-push  2
-push  4
+push this 2
+push this 4
 call get 2
-push  4
+push this 4
 call set 2
 pop temp 0
 push local 6
@@ -468,20 +468,20 @@ add
 pop local 6
 goto l43
 label l44
-push  1
+push this 1
 push local 1
 add
 push constant 1
 sub
-push  2
-push  9
-push  4
+push this 2
+push static 9
+push this 4
 call set 3
 pop temp 0
-push  1
+push this 1
 push constant 1
 sub
-push  2
+push this 2
 call setCursor 2
 pop temp 0
 push local 2
@@ -492,16 +492,16 @@ goto l45
 label l40
 label l45
 push local 0
-push  5
+push static 5
 eq
 not
 if-goto l46
-push  4
-push  1
+push this 4
+push this 1
 push constant 1
 sub
-push  2
-push  4
+push this 2
+push this 4
 call get 2
 pop local 7
 push constant 0
@@ -530,20 +530,20 @@ push local 1
 lt
 not
 if-goto l50
-push  1
+push this 1
 push constant 1
 add
 push local 6
 sub
-push  2
-push  4
-push  1
+push this 2
+push this 4
+push this 1
 push local 6
 sub
-push  2
-push  4
+push this 2
+push this 4
 call get 2
-push  4
+push this 4
 call set 2
 pop temp 0
 push local 6
@@ -552,20 +552,20 @@ add
 pop local 6
 goto l49
 label l50
-push  1
+push this 1
 push constant 1
 add
 push local 1
 sub
-push  2
-push  9
-push  4
+push this 2
+push static 9
+push this 4
 call set 3
 pop temp 0
-push  1
+push this 1
 push constant 1
 add
-push  2
+push this 2
 call setCursor 2
 pop temp 0
 push local 2
@@ -604,7 +604,7 @@ push argument 1
 call getDir 2
 pop local 0
 push local 0
-push  6
+push static 6
 eq
 push argument 1
 push constant 0
@@ -612,16 +612,16 @@ gt
 and
 not
 if-goto l52
-push  4
+push this 4
 push argument 0
 push argument 1
 push constant 1
 sub
-push  4
+push this 4
 call get 2
 pop local 1
 push local 1
-push  9
+push static 9
 eq
 not
 if-goto l53
@@ -635,7 +635,7 @@ goto l55
 label l52
 label l55
 push local 0
-push  7
+push static 7
 eq
 push argument 1
 push constant 5
@@ -643,16 +643,16 @@ lt
 and
 not
 if-goto l56
-push  4
+push this 4
 push argument 0
 push argument 1
 push constant 1
 add
-push  4
+push this 4
 call get 2
 pop local 1
 push local 1
-push  9
+push static 9
 eq
 not
 if-goto l57
@@ -666,7 +666,7 @@ goto l59
 label l56
 label l59
 push local 0
-push  4
+push static 4
 eq
 push argument 0
 push constant 0
@@ -674,16 +674,16 @@ gt
 and
 not
 if-goto l60
-push  4
+push this 4
 push argument 0
 push constant 1
 sub
 push argument 1
-push  4
+push this 4
 call get 2
 pop local 1
 push local 1
-push  9
+push static 9
 eq
 not
 if-goto l61
@@ -697,7 +697,7 @@ goto l63
 label l60
 label l63
 push local 0
-push  5
+push static 5
 eq
 push argument 0
 push constant 5
@@ -705,16 +705,16 @@ lt
 and
 not
 if-goto l64
-push  4
+push this 4
 push argument 0
 push constant 1
 add
 push argument 1
-push  4
+push this 4
 call get 2
 pop local 1
 push local 1
-push  9
+push static 9
 eq
 not
 if-goto l65
@@ -733,20 +733,20 @@ function Game.setCursor 0
 push argument 0
 pop pointer 0
 push argument 0
-pop  1
+pop this 1
 push argument 1
-pop  2
+pop this 2
 push constant 0
 return
 function Game.getDir 2
 push argument 0
 pop pointer 0
-push  8
+push static 8
 pop local 1
-push  4
+push this 4
 push argument 0
 push argument 1
-push  4
+push this 4
 call get 2
 pop local 0
 push local 0
@@ -758,7 +758,7 @@ eq
 or
 not
 if-goto l68
-push  6
+push static 6
 pop local 1
 goto l69
 label l68
@@ -771,7 +771,7 @@ eq
 or
 not
 if-goto l70
-push  7
+push static 7
 pop local 1
 goto l71
 label l70
@@ -780,7 +780,7 @@ push constant 94
 eq
 not
 if-goto l72
-push  4
+push static 4
 pop local 1
 goto l73
 label l72
@@ -789,7 +789,7 @@ push constant 118
 eq
 not
 if-goto l74
-push  5
+push static 5
 pop local 1
 goto l75
 label l74
@@ -802,23 +802,23 @@ return
 function Game.drawCursor 1
 push argument 0
 pop pointer 0
-push  1
-push  2
+push this 1
+push this 2
 call getDir 2
 pop local 0
-push  1
-push  2
+push this 1
+push this 2
 push argument 0
 call drawCrossHairs 3
 pop temp 0
 push local 0
-push  8
+push static 8
 eq
 not
 not
 if-goto l76
-push  1
-push  2
+push this 1
+push this 2
 push local 0
 push argument 0
 call drawArrowCursor 4
@@ -831,12 +831,12 @@ return
 function Game.drawCrossHairs 0
 push argument 0
 pop pointer 0
-push  2
+push static 2
 push constant 40
 push argument 1
 call Math.multiply 2
 add
-push  3
+push static 3
 push constant 40
 push argument 0
 call Math.multiply 2
@@ -863,26 +863,26 @@ push constant 241
 lt
 not
 if-goto l79
-push  2
-push  3
+push static 2
+push static 3
 push local 1
 add
-push  2
+push static 2
 push constant 240
 add
-push  3
+push static 3
 push local 1
 add
 call Screen.drawLine 4
 pop temp 0
-push  2
+push static 2
 push local 1
 add
 pop local 0
 push local 0
-push  3
+push static 3
 push local 0
-push  3
+push static 3
 push constant 240
 add
 call Screen.drawLine 4
@@ -893,30 +893,30 @@ add
 pop local 1
 goto l78
 label l79
-push  2
+push static 2
 push constant 240
 add
-push  3
+push static 3
 push constant 81
 add
-push  2
+push static 2
 push constant 240
 add
-push  3
+push static 3
 push constant 119
 add
 call Screen.drawLine 4
 pop temp 0
-push  2
+push static 2
 push constant 239
 add
-push  3
+push static 3
 push constant 81
 add
-push  2
+push static 2
 push constant 239
 add
-push  3
+push static 3
 push constant 119
 add
 call Screen.drawLine 4
@@ -937,10 +937,10 @@ push constant 6
 lt
 not
 if-goto l83
-push  4
+push this 4
 push local 2
 push local 3
-push  4
+push this 4
 call checkVehicle 2
 pop local 5
 push local 5
@@ -951,7 +951,7 @@ not
 if-goto l84
 push constant 2
 pop local 4
-push  0
+push static 0
 pop local 7
 push constant 0
 pop local 6
@@ -978,7 +978,7 @@ eq
 or
 not
 if-goto l87
-push  1
+push static 1
 pop local 7
 goto l88
 label l87
@@ -1030,10 +1030,10 @@ push constant 0
 not
 pop local 1
 push argument 2
-push  5
+push static 5
 eq
 push argument 2
-push  4
+push static 4
 eq
 or
 not
@@ -1044,10 +1044,10 @@ goto l93
 label l92
 label l93
 push argument 2
-push  7
+push static 7
 eq
 push argument 2
-push  5
+push static 5
 eq
 or
 not
@@ -1057,12 +1057,12 @@ pop local 1
 goto l95
 label l94
 label l95
-push  2
+push static 2
 push constant 40
 push argument 1
 call Math.multiply 2
 add
-push  3
+push static 3
 push constant 40
 push argument 0
 call Math.multiply 2
@@ -1077,13 +1077,13 @@ return
 function Game.drawVehicle 2
 push argument 0
 pop pointer 0
-push  2
+push static 2
 push constant 40
 push argument 3
 call Math.multiply 2
 add
 pop local 0
-push  3
+push static 3
 push constant 40
 push argument 2
 call Math.multiply 2
