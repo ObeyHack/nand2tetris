@@ -142,14 +142,8 @@ class CompilationEngine:
         self.function_type = self.typed_lexical_element(self.input_stream.token_type())
         output += self.handle_words(["constructor", "function", "method"], True)
 
-        if self.function_type == "constructor":
-            self.symbol_table.define("this", SymbolTable.ARGUMENT, self.cur_class_name)
-
-        elif self.function_type == "function":
-            x = 1
-
-        elif self.function_type == "method":
-            x = 1
+        if self.function_type == "constructor" or self.function_type == "method":
+            self.symbol_table.define("this", self.cur_class_name, SymbolTable.ARGUMENT)
 
         self.function_return_type = self.typed_lexical_element(self.input_stream.token_type())
         output += self.handle_either(["void"], [CompilationEngine.SPECIAL_GRAMMAR_TYPE])

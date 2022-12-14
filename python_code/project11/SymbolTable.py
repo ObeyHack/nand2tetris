@@ -47,10 +47,11 @@ class SymbolTable:
             "STATIC", "FIELD", "ARG", "VAR".
         """
         # Your code goes here!
+
         if kind in SymbolTable.SUBROUTINE_KINDS:
             self.subroutine_table[kind].append((name, type))
 
-        if kind in SymbolTable.CLASS_KINDS:
+        elif kind in SymbolTable.CLASS_KINDS:
             self.class_table[kind].append((name, type))
 
     def var_count(self, kind: str) -> int:
