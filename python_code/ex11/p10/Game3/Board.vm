@@ -1,68 +1,333 @@
-push const 1
-push const 2
-push const 3
-push const 4
-push const 5
-push const 6
-call .new 1
-push const 0
-push const 6
+function Board.new 1
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push constant 1
+pop static 0
+push constant 2
+pop static 1
+push constant 3
+pop static 2
+push constant 4
+pop static 3
+push constant 5
+pop static 4
+push constant 6
+call Array.new 1
+pop this 0
+push constant 0
+pop local 0
+label l0
+push local 0
+push constant 6
 lt
-push const 6
-call .new 1
-push const 1
+not
+if-goto l1
+push this 0
+push local 0
 add
-call init 0
-push const 0
-push const 36
+push constant 6
+call Array.new 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+add
+pop local 0
+goto l0
+label l1
+push argument 0
+call init 1
+pop temp 0
+return
+function Board.init 5
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label l2
+push local 0
+push constant 36
 lt
-push const 6
+not
+if-goto l3
+push local 0
+push constant 6
 call Math.divide 2
-push const 6
-call .modulus 1
-call .charAt 0
-push const 1
+pop local 1
+push local 0
+push constant 6
+call Board.modulus 2
+pop local 2
+push this 0
+push local 1
 add
-call  0
-push const 60
-eq
-push const 1
+pop pointer 1
+push that 0
+pop local 4
+push local 4
+push local 2
 add
-call  0
-push const 62
-eq
-push const 94
-eq
-push const 1
+push argument 0
+push local 0
+push argument 0
+call charAt 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
 add
-call  0
-push const 118
+pop local 0
+goto l2
+label l3
+push constant 0
+return
+function Board.set 1
+push argument 0
+pop pointer 0
+push this 0
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push local 0
+push argument 1
+add
+push argument 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function Board.get 1
+push argument 0
+pop pointer 0
+push this 0
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push local 0
+push argument 1
+add
+pop pointer 1
+push that 0
+return
+function Board.checkVehicle 2
+push argument 0
+pop pointer 0
+push argument 0
+push argument 1
+call get 2
+pop local 0
+push local 0
+push constant 60
 eq
-push const 114
+not
+if-goto l4
+push argument 0
+push argument 1
+push constant 1
+add
+call get 2
+pop local 1
+push local 1
+push constant 62
 eq
-push const 0
+not
+if-goto l5
+push static 0
+return
+goto l6
+label l5
+label l6
+push static 2
+return
+goto l7
+label l4
+label l7
+push local 0
+push constant 94
+eq
+not
+if-goto l8
+push argument 0
+push constant 1
+add
+push argument 1
+call get 2
+pop local 1
+push local 1
+push constant 118
+eq
+not
+if-goto l9
+push static 1
+return
+goto l10
+label l9
+label l10
+push static 3
+return
+goto l11
+label l8
+label l11
+push local 0
+push constant 114
+eq
+not
+if-goto l12
+push static 4
+return
+goto l13
+label l12
+label l13
+push constant 0
+return
+function Board.modulus 0
+push argument 0
+push argument 1
 lt
+not
+if-goto l14
+push argument 0
+return
+goto l15
+label l14
+label l15
+push argument 0
+push argument 1
 sub
-call .modulus -1
+push argument 1
+call Board.modulus 2
+return
+function Board.toString 4
+push argument 0
+pop pointer 0
 call Output.println 0
-push const 0
+pop temp 0
+push constant 0
+pop local 1
+push constant 18
+call String.new 1
+push constant 98
+call String.appendChar 1
+push constant 111
+call String.appendChar 1
+push constant 97
+call String.appendChar 1
+push constant 114
+call String.appendChar 1
+push constant 100
+call String.appendChar 1
+push constant 46
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 111
+call String.appendChar 1
+push constant 83
+call String.appendChar 1
+push constant 116
+call String.appendChar 1
+push constant 114
+call String.appendChar 1
+push constant 105
+call String.appendChar 1
+push constant 110
+call String.appendChar 1
+push constant 103
+call String.appendChar 1
+push constant 40
+call String.appendChar 1
+push constant 41
+call String.appendChar 1
+push constant 32
+call String.appendChar 1
+push constant 58
+call String.appendChar 1
 call Output.printString 0
+pop temp 0
 call Output.println 0
-push const 6
+pop temp 0
+label l16
+push local 1
+push constant 6
 lt
-push const 0
-push const 6
+not
+if-goto l17
+push constant 0
+pop local 2
+push this 0
+push local 1
+add
+pop pointer 1
+push that 0
+pop local 3
+label l18
+push local 2
+push constant 6
 lt
-call Output.printChar 0
-push const 1
+not
+if-goto l19
+push local 3
+push local 2
 add
-push const 1
+pop pointer 1
+push that 0
+call Output.printChar 2
+pop temp 0
+push local 2
+push constant 1
 add
+pop local 2
+goto l18
+label l19
+push local 1
+push constant 1
+add
+pop local 1
 call Output.println 0
-push const 0
-push const 6
+pop temp 0
+goto l16
+label l17
+push constant 0
+return
+function Board.dispose 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 1
+label l20
+push local 1
+push constant 6
 lt
-call temp.dispose 0
-push const 1
+not
+if-goto l21
+push this 0
+push local 1
 add
-call board.dispose 0
+pop pointer 1
+push that 0
+pop local 0
+push local 0
+call dispose 0
+pop temp 0
+push local 1
+push constant 1
+add
+pop local 1
+goto l20
+label l21
+push this 0
+call dispose 0
+pop temp 0
+push constant 0
+return

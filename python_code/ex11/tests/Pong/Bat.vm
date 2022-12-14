@@ -1,1052 +1,201 @@
-<class>
-  <keyword> class </keyword>
-  <identifier>
-    <name>  </name>
-    <category> class </category>
-  </identifier>
-  <symbol> { </symbol>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> , </symbol>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> , </symbol>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <subroutineDec>
-    <keyword> constructor </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> False </isDefined>
-    </identifier>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <keyword> int </keyword>
-      <identifier>
-        <name>  </name>
-        <category> ARG </category>
-        <index> 0 </index>
-        <isDefined> True </isDefined>
-      </identifier>
-      <symbol> , </symbol>
-      <keyword> int </keyword>
-      <identifier>
-        <name>  </name>
-        <category> ARG </category>
-        <index> 0 </index>
-        <isDefined> True </isDefined>
-      </identifier>
-      <symbol> , </symbol>
-      <keyword> int </keyword>
-      <identifier>
-        <name>  </name>
-        <category> ARG </category>
-        <index> 0 </index>
-        <isDefined> True </isDefined>
-      </identifier>
-      <symbol> , </symbol>
-      <keyword> int </keyword>
-      <identifier>
-        <name>  </name>
-        <category> ARG </category>
-        <index> 0 </index>
-        <isDefined> True </isDefined>
-      </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> ARG </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> ARG </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> ARG </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> ARG </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> ARG </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <integerConstant> 2 </integerConstant>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> ( </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <expression>
-            <term>
-              <keyword> this </keyword>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <keyword> this </keyword>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <keyword> true </keyword>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> ( </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <keyword> false </keyword>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> ( </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-              </term>
-              <symbol> + </symbol>
-              <term>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-              </term>
-              <symbol> + </symbol>
-              <term>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <keyword> int </keyword>
-      <identifier>
-        <name>  </name>
-        <category> ARG </category>
-        <index> 0 </index>
-        <isDefined> True </isDefined>
-      </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> ARG </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <returnStatement>
-          <keyword> return </keyword>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <returnStatement>
-          <keyword> return </keyword>
-          <expression>
-            <term>
-            </term>
-            <symbol> + </symbol>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <keyword> int </keyword>
-      <identifier>
-        <name>  </name>
-        <category> ARG </category>
-        <index> 0 </index>
-        <isDefined> True </isDefined>
-      </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> ( </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> ARG </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> ( </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <ifStatement>
-          <keyword> if </keyword>
-          <symbol> ( </symbol>
-          <expression>
-            <term>
-            </term>
-            <symbol> = </symbol>
-            <term>
-              <integerConstant> 1 </integerConstant>
-            </term>
-          </expression>
-          <symbol> ) </symbol>
-          <symbol> { </symbol>
-          <statements>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> FIELD </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                </term>
-                <symbol> - </symbol>
-                <term>
-                  <integerConstant> 4 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <ifStatement>
-              <keyword> if </keyword>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                </term>
-                <symbol> &lt; </symbol>
-                <term>
-                  <integerConstant> 0 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-              <symbol> { </symbol>
-              <statements>
-                <letStatement>
-                  <keyword> let </keyword>
-                  <identifier>
-                    <name>  </name>
-                    <category> FIELD </category>
-                    <index> 0 </index>
-                    <isDefined> False </isDefined>
-                  </identifier>
-                  <symbol> = </symbol>
-                  <expression>
-                    <term>
-                      <integerConstant> 0 </integerConstant>
-                    </term>
-                  </expression>
-                  <symbol> ; </symbol>
-                </letStatement>
-              </statements>
-              <symbol> } </symbol>
-            </ifStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <keyword> false </keyword>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <symbol> ( </symbol>
-                    <expression>
-                      <term>
-                      </term>
-                      <symbol> + </symbol>
-                      <term>
-                      </term>
-                    </expression>
-                    <symbol> ) </symbol>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                    <integerConstant> 1 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <symbol> ( </symbol>
-                    <expression>
-                      <term>
-                      </term>
-                      <symbol> + </symbol>
-                      <term>
-                      </term>
-                    </expression>
-                    <symbol> ) </symbol>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                    <integerConstant> 4 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <keyword> true </keyword>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                    <integerConstant> 3 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-          </statements>
-          <symbol> } </symbol>
-          <keyword> else </keyword>
-          <symbol> { </symbol>
-          <statements>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> FIELD </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                </term>
-                <symbol> + </symbol>
-                <term>
-                  <integerConstant> 4 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <ifStatement>
-              <keyword> if </keyword>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                  <symbol> ( </symbol>
-                  <expression>
-                    <term>
-                    </term>
-                    <symbol> + </symbol>
-                    <term>
-                    </term>
-                  </expression>
-                  <symbol> ) </symbol>
-                </term>
-                <symbol> &gt; </symbol>
-                <term>
-                  <integerConstant> 511 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-              <symbol> { </symbol>
-              <statements>
-                <letStatement>
-                  <keyword> let </keyword>
-                  <identifier>
-                    <name>  </name>
-                    <category> FIELD </category>
-                    <index> 0 </index>
-                    <isDefined> False </isDefined>
-                  </identifier>
-                  <symbol> = </symbol>
-                  <expression>
-                    <term>
-                      <integerConstant> 511 </integerConstant>
-                    </term>
-                    <symbol> - </symbol>
-                    <term>
-                    </term>
-                  </expression>
-                  <symbol> ; </symbol>
-                </letStatement>
-              </statements>
-              <symbol> } </symbol>
-            </ifStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <keyword> false </keyword>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> - </symbol>
-                  <term>
-                    <integerConstant> 4 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> - </symbol>
-                  <term>
-                    <integerConstant> 1 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <keyword> true </keyword>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <symbol> ( </symbol>
-                    <expression>
-                      <term>
-                      </term>
-                      <symbol> + </symbol>
-                      <term>
-                      </term>
-                    </expression>
-                    <symbol> ) </symbol>
-                  </term>
-                  <symbol> - </symbol>
-                  <term>
-                    <integerConstant> 3 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                  <symbol> + </symbol>
-                  <term>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-          </statements>
-          <symbol> } </symbol>
-        </ifStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <symbol> } </symbol>
-</class>
+function Bat.new 0
+push constant 5
+call Memory.alloc 1
+pop pointer 0
+push argument 1
+pop this 0
+push argument 2
+pop this 1
+push argument 3
+pop this 2
+push argument 4
+pop this 3
+push constant 2
+pop this 4
+call show 0
+pop temp 0
+return
+function Bat.dispose 0
+push argument 0
+pop pointer 0
+call Memory.deAlloc 0
+pop temp 0
+push constant 0
+return
+function Bat.show 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 0
+pop temp 0
+call draw 0
+pop temp 0
+push constant 0
+return
+function Bat.hide 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 0
+pop temp 0
+call draw 0
+pop temp 0
+push constant 0
+return
+function Bat.draw 0
+push argument 0
+pop pointer 0
+push this 0
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Bat.setDirection 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 4
+push constant 0
+return
+function Bat.getLeft 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Bat.getRight 0
+push argument 0
+pop pointer 0
+push this 0
+push this 2
+add
+return
+function Bat.setWidth 0
+push argument 0
+pop pointer 0
+call hide 0
+pop temp 0
+push argument 1
+pop this 2
+call show 0
+pop temp 0
+push constant 0
+return
+function Bat.move 0
+push argument 0
+pop pointer 0
+push this 4
+push constant 1
+eq
+not
+if-goto l0
+push this 0
+push constant 4
+sub
+pop this 0
+push this 0
+push constant 0
+lt
+not
+if-goto l1
+push constant 0
+pop this 0
+goto l2
+label l1
+label l2
+push constant 0
+call Screen.setColor 0
+pop temp 0
+push this 0
+push this 2
+add
+push constant 1
+add
+push this 1
+push this 0
+push this 2
+add
+push constant 4
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+not
+call Screen.setColor 0
+pop temp 0
+push this 0
+push this 1
+push this 0
+push constant 3
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+goto l3
+label l0
+push this 0
+push constant 4
+add
+pop this 0
+push this 0
+push this 2
+add
+push constant 511
+gt
+not
+if-goto l4
+push constant 511
+push this 2
+sub
+pop this 0
+goto l5
+label l4
+label l5
+push constant 0
+call Screen.setColor 0
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push this 0
+push constant 1
+sub
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+not
+call Screen.setColor 0
+pop temp 0
+push this 0
+push this 2
+add
+push constant 3
+sub
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+label l3
+push constant 0
+return

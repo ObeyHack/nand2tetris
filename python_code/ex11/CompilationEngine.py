@@ -29,6 +29,8 @@ class CompilationEngine:
     SPECIAL_GRAMMAR_TYPE = "50000"
     BAD_ERROR_MSG = "DEAD ERRORRRRRRRRRR"
     ERROR_MSG = "its my error :) invalid syntax :) go fix it :("
+    cond_index = 0
+    LABEL = lambda i: f"L{i}"
 
     def __init__(self, input_stream: JackTokenizer, output_stream_vm: typing.TextIO,
                  output_stream_xml: typing.TextIO) -> None:
@@ -44,15 +46,18 @@ class CompilationEngine:
         self.input_stream = input_stream
         self.output_stream = output_stream_xml
         self.count_tabs = 0
-        self.class_name = ""
+        self.cur_class_name = ""
         self.subroutine_name = ""
+        self.class_name = ""
+        self.cur_subroutine_name = ""
+        self.function_type = ""
         self.is_class_name = True
         self.is_subroutine_name = False
         self.symbol_table = SymbolTable()
         self.vm_writer = VMWriter(output_stream_vm)
         self.cur_type = ""
+        self.function_return_type = ""
         self.count_pushed = 0
-        self.function_type = ""
         self.compile_class()
 
     def compile_class(self) -> None:
@@ -63,6 +68,7 @@ class CompilationEngine:
         output = self.write_to_file(output, True)
         self.count_tabs += 1
         output += self.handle_words(["class"], True)
+        self.cur_class_name = self.typed_lexical_element(self.input_stream.token_type())
         output += self.compile_identifier(class_name=True)
         output += self.handle_words(["{"])
 
@@ -133,22 +139,17 @@ class CompilationEngine:
 
         self.symbol_table.start_subroutine()
 
-        function_type = self.typed_lexical_element(self.input_stream.token_type())
+        self.function_type = self.typed_lexical_element(self.input_stream.token_type())
         output += self.handle_words(["constructor", "function", "method"], True)
-        if function_type:
-            self.function_type = function_type
 
-        if function_type == "constructor":
-            self.write_constructor_start()
-            self.symbol_table.define("this", SymbolTable.ARGUMENT, self.class_name)
+        if self.function_type == "constructor" or self.function_type == "method":
+            self.symbol_table.define("this", self.cur_class_name, SymbolTable.ARGUMENT)
 
-        elif function_type == "function":
-            x = 1
-
-        elif function_type == "method":
-            x = 1
-
+        self.function_return_type = self.typed_lexical_element(self.input_stream.token_type())
         output += self.handle_either(["void"], [CompilationEngine.SPECIAL_GRAMMAR_TYPE])
+
+        function_name = self.typed_lexical_element(self.input_stream.token_type())
+        self.cur_subroutine_name = f"{self.cur_class_name}.{function_name}"
 
         output += self.compile_identifier(subroutine_name=True)
         output += self.handle_words(["("])
@@ -268,6 +269,10 @@ class CompilationEngine:
         output += self.compile_subroutine_call(False)
         output += self.handle_words([";"])
 
+        segment = VMWriter.VOID_SEGMENT
+        index = VMWriter.VOID_INDEX
+        self.vm_writer.write_pop(segment, index)
+
         self.count_tabs -= 1
         output += self.write_to_file(word, False)
         self.output_stream.write(output)
@@ -281,7 +286,14 @@ class CompilationEngine:
         self.count_tabs += 1
 
         output += self.handle_words(["let"], True)
+        name = self.typed_lexical_element(self.input_stream.token_type())
         output += self.compile_identifier()
+        is_arr = False
+        if self.typed_lexical_element(self.input_stream.token_type()) == "[":
+            is_arr = True
+            segment = self.symbol_table.kind_of(name)
+            index = self.symbol_table.index_of(name)
+            self.vm_writer.write_push(self.kind_to_segment(segment), index)
 
         tabs = self.count_tabs
         for i in range(1):
@@ -295,6 +307,9 @@ class CompilationEngine:
             output = ""
             self.compile_expression()
             output += self.handle_words(["]"])
+            self.vm_writer.write_arithmetic("ADD")
+
+
         self.count_tabs = tabs
 
         output += self.handle_words(["="])
@@ -302,6 +317,18 @@ class CompilationEngine:
         output = ""
         self.compile_expression()
         output += self.handle_words([";"])
+
+        if is_arr:
+            self.vm_writer.write_pop(VMWriter.TEMP,  0)
+            self.vm_writer.write_pop(VMWriter.POINTER, 1)
+            self.vm_writer.write_push(VMWriter.TEMP, 0)
+            self.vm_writer.write_pop(VMWriter.THAT, 0)
+
+        else:
+            segment = self.symbol_table.kind_of(name)
+            index = self.symbol_table.index_of(name)
+            if segment:
+                self.vm_writer.write_pop(self.kind_to_segment(segment), index)
 
         self.count_tabs -= 1
         output += self.write_to_file(word, False)
@@ -319,13 +346,27 @@ class CompilationEngine:
         output += self.handle_words(["("])
         self.output_stream.write(output)
         output = ""
+
+        l1 = self.cond_index
+        self.vm_writer.write_label(CompilationEngine.LABEL(l1))
+        self.cond_index += 1
+
         self.compile_expression()
+
+        self.vm_writer.write_arithmetic("NOT")
+        l2 = self.cond_index
+        self.vm_writer.write_if(CompilationEngine.LABEL(l2))
+        self.cond_index += 1
+
         output += self.handle_words([")"])
         output += self.handle_words(["{"])
         self.output_stream.write(output)
         output = ""
         self.compile_statements()
         output += self.handle_words(["}"])
+
+        self.vm_writer.write_goto(CompilationEngine.LABEL(l1))
+        self.vm_writer.write_label(CompilationEngine.LABEL(l2))
 
         self.count_tabs -= 1
         output += self.write_to_file(word, False)
@@ -353,6 +394,10 @@ class CompilationEngine:
                 break
         self.count_tabs = tabs
 
+        if self.function_return_type == "void":
+            self.vm_writer.write_push(VMWriter.CONST, 0)
+        self.vm_writer.write_return()
+
         output += self.handle_words([";"])
         self.count_tabs -= 1
         output += self.write_to_file(word, False)
@@ -371,12 +416,23 @@ class CompilationEngine:
         self.output_stream.write(output)
         output = ""
         self.compile_expression()
+
+        self.vm_writer.write_arithmetic("NOT")
+        l1 = self.cond_index
+        self.vm_writer.write_if(CompilationEngine.LABEL(l1))
+        self.cond_index += 1
+
         output += self.handle_words([")"])
         output += self.handle_words(["{"])
         self.output_stream.write(output)
         output = ""
         self.compile_statements()
         output += self.handle_words(["}"])
+
+        l2 = self.cond_index
+        self.vm_writer.write_goto(CompilationEngine.LABEL(l2))
+        self.cond_index += 1
+        self.vm_writer.write_label(CompilationEngine.LABEL(l1))
 
         tabs = self.count_tabs
         for i in range(1):
@@ -391,6 +447,8 @@ class CompilationEngine:
             output = ""
             self.compile_statements()
             output += self.handle_words(["}"])
+
+        self.vm_writer.write_label(CompilationEngine.LABEL(l2))
         self.count_tabs = tabs
 
         self.count_tabs -= 1
@@ -411,6 +469,7 @@ class CompilationEngine:
         tabs = self.count_tabs
         while True:
             try:
+
                 str_output, arithmetic_commend = self.compile_op(True)
                 output += str_output
 
@@ -469,8 +528,10 @@ class CompilationEngine:
                 output += self.compile_identifier()
                 segment = self.symbol_table.kind_of(name)
                 index = self.symbol_table.index_of(name)
-                self.vm_writer.write_push(segment, index)
-                self.count_pushed += 1
+                self.vm_writer.write_push(self.kind_to_segment(segment), index)
+
+                if not self.typed_lexical_element(self.input_stream.token_type()) == "[":
+                    self.count_pushed += 1
 
 
             try:
@@ -481,7 +542,7 @@ class CompilationEngine:
                 try:
                     self.output_stream.write(output)
                     output = ""
-                    output += self.compile_subroutine_call(True)
+                    output += self.compile_subroutine_call(True, name=name)
                 except:
                     x=1
 
@@ -507,10 +568,13 @@ class CompilationEngine:
                         except TypeError:
                             try:
                                 output += self.compile_string_const(True)
+                                self.count_pushed += 1
 
                             except TypeError:
                                 try:
-                                    output += self.compile_keyword_const(True)
+                                    keyword_output, keyword = self.compile_keyword_const(True)
+                                    self.switch_case_keyword(keyword)
+                                    output += keyword_output
 
                                 except TypeError:
                                     try:
@@ -559,11 +623,10 @@ class CompilationEngine:
         output += self.write_to_file(word, False)
         self.output_stream.write(output)
 
-    def compile_subroutine_call(self, is_identifier_compiled) -> str:
+    def compile_subroutine_call(self, is_identifier_compiled, name="") -> str:
         tabs = self.count_tabs
 
         output = ""
-        name = ""
         if not is_identifier_compiled:
             name = self.typed_lexical_element(self.input_stream.token_type())
             if self.symbol_table.type_of(name) == "":
@@ -603,7 +666,14 @@ class CompilationEngine:
         self.compile_expression_list()
         output += self.handle_words([")"])
 
-        final_name = f"{name}.{func_name}"
+        if self.symbol_table.type_of(name):
+            segment = self.symbol_table.kind_of(name)
+            index = self.symbol_table.index_of(name)
+            self.vm_writer.write_push(self.kind_to_segment(segment), index)
+            final_name = f"{func_name}"
+        else:
+            final_name = f"{name}.{func_name}"
+
         self.vm_writer.write_call(final_name, self.count_pushed)
 
         return output
@@ -620,10 +690,11 @@ class CompilationEngine:
         return output
 
     def compile_condition(self) -> str:
-        output = self.compile_unary_op()
+        output, arithmetic_commend = self.compile_unary_op()
         self.output_stream.write(output)
         output = ""
         self.compile_term()
+        self.vm_writer.write_arithmetic(arithmetic_commend)
         return output
 
     def compile_bracket_expression(self) -> str:
@@ -640,11 +711,15 @@ class CompilationEngine:
         output = ""
         self.compile_expression()
         output += self.handle_words(["]"])
+        self.vm_writer.write_arithmetic("ADD")
+        self.vm_writer.write_pop(VMWriter.POINTER, 1)
+        self.vm_writer.write_push(VMWriter.THAT, 0)
         return output
 
-    def compile_keyword_const(self, first_word=False) -> str:
+    def compile_keyword_const(self, first_word=False) -> tuple[str, str]:
+        keyword = self.typed_lexical_element(self.input_stream.token_type())
         output = self.handle_words(["true", "false", "null", "this"], first_word)
-        return output
+        return output, keyword
 
     def compile_op(self, first_word=False):
         op_symbol = self.typed_lexical_element(self.input_stream.token_type())
@@ -658,9 +733,11 @@ class CompilationEngine:
 
         return output, arithmetic_commend
 
-    def compile_unary_op(self, first_word=False) -> str:
+    def compile_unary_op(self, first_word=False) -> tuple[str, str]:
+        op_symbol = self.typed_lexical_element(self.input_stream.token_type())
+        arithmetic_commend = self.switch_case_unaryop(op_symbol)
         output = self.handle_words(["-", "~"], first_word)
-        return output
+        return output, arithmetic_commend
 
     def compile_statement(self, first_word=False) -> None:
         self.handle_either([], [CompilationEngine.SPECIAL_GRAMMAR_LET,
@@ -685,6 +762,8 @@ class CompilationEngine:
 
         output = self.handle_either(["int", "char", "boolean"], [CompilationEngine.SPECIAL_GRAMMAR_IDENTIFIER],
                                     first_word)
+
+        self.is_class_name = False
         return output
 
     def compile_identifier(self, first_word=False, class_name=False, subroutine_name=False, kind="",
@@ -753,7 +832,6 @@ class CompilationEngine:
             raise ValueError(CompilationEngine.BAD_ERROR_MSG)
 
         tabs = "  " * self.count_tabs
-
         name = self.typed_lexical_element(self.input_stream.token_type())
 
         output = tabs + f"<integerConstant> " \
@@ -771,11 +849,15 @@ class CompilationEngine:
                 raise TypeError(CompilationEngine.ERROR_MSG)
             raise ValueError(CompilationEngine.BAD_ERROR_MSG)
 
+
         tabs = "  " * self.count_tabs
         remove = '"'
+        name = self.typed_lexical_element(self.input_stream.token_type()).strip(remove)
         output = tabs + f"<stringConstant> " \
-                        f"{self.typed_lexical_element(self.input_stream.token_type()).strip(remove)} " \
+                        f"{name} " \
                         f"</stringConstant>\n"
+
+        self.write_string_vm(name)
 
         if self.input_stream.has_more_tokens():
             self.input_stream.advance()
@@ -798,6 +880,15 @@ class CompilationEngine:
             except TypeError:
                 break
         self.count_tabs = tabs
+
+        vars_count = self.symbol_table.var_count(self.symbol_table.VAR)
+        self.vm_writer.write_function(self.cur_subroutine_name, vars_count)
+
+        if self.function_type == "constructor":
+            self.write_constructor_start()
+
+        elif self.function_type == "method":
+            self.write_method_start()
 
         self.compile_statements()
         output += self.handle_words(["}"])
@@ -885,7 +976,7 @@ class CompilationEngine:
         if self.function_type == "constructor":
             segment = self.symbol_table.kind_of(name)
             index = self.symbol_table.index_of(name)
-            self.vm_writer.write_push(segment, index)
+            self.vm_writer.write_push(self.kind_to_segment(segment), index)
             self.vm_writer.write_pop(VMWriter.THIS, index)
 
         elif self.function_type == "function":
@@ -894,7 +985,6 @@ class CompilationEngine:
         elif self.function_type == "method":
             x = 1
 
-
     def write_constructor_start(self):
         field_count = self.symbol_table.var_count(SymbolTable.FIELD)
 
@@ -902,6 +992,18 @@ class CompilationEngine:
         self.vm_writer.write_call("Memory.alloc", 1)
         self.vm_writer.write_pop(VMWriter.POINTER, 0)
 
+    def write_method_start(self):
+        self.vm_writer.write_push(VMWriter.ARG, 0)
+        self.vm_writer.write_pop(VMWriter.POINTER, 0)
+
+    def write_string_vm(self, word: str):
+        length = len(word)
+        self.vm_writer.write_push(VMWriter.CONST, length)
+        self.vm_writer.write_call("String.new", 1)
+        for i in range(length):
+            c = ord(word[i])
+            self.vm_writer.write_push(VMWriter.CONST, c)
+            self.vm_writer.write_call("String.appendChar", 2)
 
     def parse_xml_special(self, word):
         if word in CompilationEngine.XML_SPECIAL:
@@ -964,9 +1066,36 @@ class CompilationEngine:
                 return math_function_dict[op_symbol]
 
     def switch_case_op(self, op_symbol) -> str:
-        for arithmetic_dict in VMWriter.ARITHMETIC:
+        for arithmetic_dict in VMWriter.TWO_VARS:
             if op_symbol in arithmetic_dict.keys():
                 return arithmetic_dict[op_symbol]
 
+    def switch_case_unaryop(self, op_symbol) -> str:
+        for arithmetic_dict in VMWriter.ONE_VARS:
+            if op_symbol in arithmetic_dict.keys():
+                return arithmetic_dict[op_symbol]
 
+    def switch_case_keyword(self, keyword: str):
+        # "true", "false", "null", "this"
 
+        if keyword == "true":
+            self.vm_writer.write_push(VMWriter.CONST, 0)
+            self.vm_writer.write_arithmetic("NOT")
+
+        elif keyword == "false" or keyword == "null":
+            self.vm_writer.write_push(VMWriter.CONST, 0)
+
+    def kind_to_segment(self, kind) -> str:
+        if kind == SymbolTable.VAR:
+            return VMWriter.LOCAL
+
+        if kind == SymbolTable.ARGUMENT:
+            return VMWriter.ARG
+
+        if kind == SymbolTable.FIELD:
+            return VMWriter.THIS
+
+        if kind == SymbolTable.STATIC:
+            return VMWriter.STATIC
+
+        return ""

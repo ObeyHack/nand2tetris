@@ -21,7 +21,7 @@
 class Main {
     
     /**
-     * Initializes RAM[8001]..RAM[8016] to -1,
+     * Initializes RAM[8001]..RAM[8016] to z-1,
      * and converts the value in RAM[8000] to binary.
      */
     function void main() {

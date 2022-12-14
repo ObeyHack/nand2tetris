@@ -12,18 +12,19 @@ class VMWriter:
     """
     Writes VM commands into a file. Encapsulates the VM command syntax.
     """
-    CONST = "CONST"
-    ARG = "ARG"
-    LOCAL = "LOCAL"
-    STATIC = "STATIC"
-    THIS = "THIS"
-    THAT = "THAT"
-    POINTER = "POINTER"
-    TEMP = "TEMP"
+    CONST = "constant"
+    ARG = "argument"
+    LOCAL = "local"
+    STATIC = "static"
+    THIS = "this"
+    THAT = "that"
+    POINTER = "pointer"
+    TEMP = "temp"
 
     ADD = {"+": "ADD"}
     SUB = {"-": "SUB"}
     NEG = {"-": "NEG"}
+    NEG_IF = {"~": "NOT"}
     EQ = {"=": "EQ"}
     GT = {">": "GT"}
     LT = {"<": "LT"}
@@ -38,7 +39,10 @@ class VMWriter:
     MULT = {"*": ("Math.multiply", 2)}
     DIVIDE = {"/": ("Math.divide", 2)}
 
-    ONE_VARS = [NEG, NOT, SHIFTLEFT, SHIFTRIGHT]
+    VOID_SEGMENT = TEMP
+    VOID_INDEX = 0
+
+    ONE_VARS = [NEG_IF, NEG, NOT, SHIFTLEFT, SHIFTRIGHT]
     TWO_VARS = [ADD, SUB, EQ, GT, LT, AND, OR, MULT, DIVIDE]
     MATH = [MULT, DIVIDE]
     SEGMENTS = [CONST, ARG, LOCAL, STATIC, THIS, THAT, TEMP]
@@ -83,6 +87,7 @@ class VMWriter:
             "EQ", "GT", "LT", "AND", "OR", "NOT", "SHIFTLEFT", "SHIFTRIGHT".
         """
         # Your code goes here!
+
         output = f"{command.lower()}\n"
         self.output_stream.write(output)
 

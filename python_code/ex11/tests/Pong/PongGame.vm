@@ -1,1661 +1,322 @@
-<class>
-  <keyword> class </keyword>
-  <identifier>
-    <name>  </name>
-    <category> class </category>
-  </identifier>
-  <symbol> { </symbol>
-  <classVarDec>
-    <keyword> static </keyword>
-    <identifier>
-      <name>  </name>
-      <category>  </category>
-      <index> -1 </index>
-      <isDefined> False </isDefined>
-    </identifier>
-    <identifier>
-      <name>  </name>
-      <category> class </category>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <identifier>
-      <name>  </name>
-      <category>  </category>
-      <index> -1 </index>
-      <isDefined> False </isDefined>
-    </identifier>
-    <identifier>
-      <name>  </name>
-      <category> class </category>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <identifier>
-      <name>  </name>
-      <category>  </category>
-      <index> -1 </index>
-      <isDefined> False </isDefined>
-    </identifier>
-    <identifier>
-      <name>  </name>
-      <category> class </category>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> boolean </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <classVarDec>
-    <keyword> field </keyword>
-    <keyword> int </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> True </isDefined>
-    </identifier>
-    <symbol> ; </symbol>
-  </classVarDec>
-  <subroutineDec>
-    <keyword> constructor </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> False </isDefined>
-    </identifier>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <integerConstant> 50 </integerConstant>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <integerConstant> 230 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 229 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 7 </integerConstant>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <integerConstant> 253 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 222 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 0 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 511 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 0 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 229 </integerConstant>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <integerConstant> 400 </integerConstant>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-                <integerConstant> 0 </integerConstant>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <integerConstant> 0 </integerConstant>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-                <integerConstant> 238 </integerConstant>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-                <integerConstant> 511 </integerConstant>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-                <integerConstant> 240 </integerConstant>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <integerConstant> 22 </integerConstant>
-              </term>
-            </expression>
-            <symbol> , </symbol>
-            <expression>
-              <term>
-                <integerConstant> 0 </integerConstant>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <stringConstant> Score: 0 </stringConstant>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <keyword> false </keyword>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <integerConstant> 0 </integerConstant>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <integerConstant> 0 </integerConstant>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <integerConstant> 0 </integerConstant>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <expression>
-            <term>
-              <keyword> this </keyword>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <doStatement>
-          <keyword> do </keyword>
-          <identifier>
-            <name> . </name>
-            <category> class </category>
-          </identifier>
-          <symbol> . </symbol>
-          <identifier>
-            <name>  </name>
-            <category> subroutine </category>
-          </identifier>
-          <symbol> ( </symbol>
-          <expressionList>
-            <expression>
-              <term>
-                <keyword> this </keyword>
-              </term>
-            </expression>
-          </expressionList>
-          <symbol> ) </symbol>
-          <symbol> ; </symbol>
-        </doStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> function </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> FIELD </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-              </expressionList>
-              <symbol> ) </symbol>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> function </keyword>
-    <identifier>
-      <name>  </name>
-      <category> FIELD </category>
-      <index> 0 </index>
-      <isDefined> False </isDefined>
-    </identifier>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <statements>
-        <returnStatement>
-          <keyword> return </keyword>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <varDec>
-        <keyword> var </keyword>
-        <keyword> char </keyword>
-        <identifier>
-          <name>  </name>
-          <category> VAR </category>
-          <index> 0 </index>
-          <isDefined> True </isDefined>
-        </identifier>
-        <symbol> ; </symbol>
-      </varDec>
-      <statements>
-        <whileStatement>
-          <keyword> while </keyword>
-          <symbol> ( </symbol>
-          <expression>
-            <term>
-              <symbol> ~ </symbol>
-              <term>
-              </term>
-            </term>
-          </expression>
-          <symbol> ) </symbol>
-          <symbol> { </symbol>
-          <statements>
-            <whileStatement>
-              <keyword> while </keyword>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                  <symbol> ( </symbol>
-                  <expression>
-                    <term>
-                    </term>
-                    <symbol> = </symbol>
-                    <term>
-                      <integerConstant> 0 </integerConstant>
-                    </term>
-                  </expression>
-                  <symbol> ) </symbol>
-                </term>
-                <symbol> &amp; </symbol>
-                <term>
-                  <symbol> ( </symbol>
-                  <expression>
-                    <term>
-                      <symbol> ~ </symbol>
-                      <term>
-                      </term>
-                    </term>
-                  </expression>
-                  <symbol> ) </symbol>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-              <symbol> { </symbol>
-              <statements>
-                <letStatement>
-                  <keyword> let </keyword>
-                  <identifier>
-                    <name>  </name>
-                    <category> VAR </category>
-                    <index> 0 </index>
-                    <isDefined> False </isDefined>
-                  </identifier>
-                  <symbol> = </symbol>
-                  <expression>
-                    <term>
-                      <identifier>
-                        <name> . </name>
-                        <category> class </category>
-                      </identifier>
-                      <symbol> . </symbol>
-                      <identifier>
-                        <name>  </name>
-                        <category> subroutine </category>
-                      </identifier>
-                      <symbol> ( </symbol>
-                      <expressionList>
-                      </expressionList>
-                      <symbol> ) </symbol>
-                    </term>
-                  </expression>
-                  <symbol> ; </symbol>
-                </letStatement>
-                <doStatement>
-                  <keyword> do </keyword>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                  <symbol> ; </symbol>
-                </doStatement>
-                <doStatement>
-                  <keyword> do </keyword>
-                  <identifier>
-                    <name> ( </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                  <symbol> ; </symbol>
-                </doStatement>
-                <doStatement>
-                  <keyword> do </keyword>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                    <expression>
-                      <term>
-                        <integerConstant> 50 </integerConstant>
-                      </term>
-                    </expression>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                  <symbol> ; </symbol>
-                </doStatement>
-              </statements>
-              <symbol> } </symbol>
-            </whileStatement>
-            <ifStatement>
-              <keyword> if </keyword>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                </term>
-                <symbol> = </symbol>
-                <term>
-                  <integerConstant> 130 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-              <symbol> { </symbol>
-              <statements>
-                <doStatement>
-                  <keyword> do </keyword>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                    <expression>
-                      <term>
-                        <integerConstant> 1 </integerConstant>
-                      </term>
-                    </expression>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                  <symbol> ; </symbol>
-                </doStatement>
-              </statements>
-              <symbol> } </symbol>
-              <keyword> else </keyword>
-              <symbol> { </symbol>
-              <statements>
-                <ifStatement>
-                  <keyword> if </keyword>
-                  <symbol> ( </symbol>
-                  <expression>
-                    <term>
-                    </term>
-                    <symbol> = </symbol>
-                    <term>
-                      <integerConstant> 132 </integerConstant>
-                    </term>
-                  </expression>
-                  <symbol> ) </symbol>
-                  <symbol> { </symbol>
-                  <statements>
-                    <doStatement>
-                      <keyword> do </keyword>
-                      <identifier>
-                        <name> . </name>
-                        <category> class </category>
-                      </identifier>
-                      <symbol> . </symbol>
-                      <identifier>
-                        <name>  </name>
-                        <category> subroutine </category>
-                      </identifier>
-                      <symbol> ( </symbol>
-                      <expressionList>
-                        <expression>
-                          <term>
-                            <integerConstant> 2 </integerConstant>
-                          </term>
-                        </expression>
-                      </expressionList>
-                      <symbol> ) </symbol>
-                      <symbol> ; </symbol>
-                    </doStatement>
-                  </statements>
-                  <symbol> } </symbol>
-                  <keyword> else </keyword>
-                  <symbol> { </symbol>
-                  <statements>
-                    <ifStatement>
-                      <keyword> if </keyword>
-                      <symbol> ( </symbol>
-                      <expression>
-                        <term>
-                        </term>
-                        <symbol> = </symbol>
-                        <term>
-                          <integerConstant> 140 </integerConstant>
-                        </term>
-                      </expression>
-                      <symbol> ) </symbol>
-                      <symbol> { </symbol>
-                      <statements>
-                        <letStatement>
-                          <keyword> let </keyword>
-                          <identifier>
-                            <name>  </name>
-                            <category> VAR </category>
-                            <index> 0 </index>
-                            <isDefined> False </isDefined>
-                          </identifier>
-                          <symbol> = </symbol>
-                          <expression>
-                            <term>
-                              <keyword> true </keyword>
-                            </term>
-                          </expression>
-                          <symbol> ; </symbol>
-                        </letStatement>
-                      </statements>
-                      <symbol> } </symbol>
-                    </ifStatement>
-                  </statements>
-                  <symbol> } </symbol>
-                </ifStatement>
-              </statements>
-              <symbol> } </symbol>
-            </ifStatement>
-            <whileStatement>
-              <keyword> while </keyword>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                  <symbol> ( </symbol>
-                  <expression>
-                    <term>
-                      <symbol> ~ </symbol>
-                      <term>
-                        <symbol> ( </symbol>
-                        <expression>
-                          <term>
-                          </term>
-                          <symbol> = </symbol>
-                          <term>
-                            <integerConstant> 0 </integerConstant>
-                          </term>
-                        </expression>
-                        <symbol> ) </symbol>
-                      </term>
-                    </term>
-                  </expression>
-                  <symbol> ) </symbol>
-                </term>
-                <symbol> &amp; </symbol>
-                <term>
-                  <symbol> ( </symbol>
-                  <expression>
-                    <term>
-                      <symbol> ~ </symbol>
-                      <term>
-                      </term>
-                    </term>
-                  </expression>
-                  <symbol> ) </symbol>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-              <symbol> { </symbol>
-              <statements>
-                <letStatement>
-                  <keyword> let </keyword>
-                  <identifier>
-                    <name>  </name>
-                    <category> VAR </category>
-                    <index> 0 </index>
-                    <isDefined> False </isDefined>
-                  </identifier>
-                  <symbol> = </symbol>
-                  <expression>
-                    <term>
-                      <identifier>
-                        <name> . </name>
-                        <category> class </category>
-                      </identifier>
-                      <symbol> . </symbol>
-                      <identifier>
-                        <name>  </name>
-                        <category> subroutine </category>
-                      </identifier>
-                      <symbol> ( </symbol>
-                      <expressionList>
-                      </expressionList>
-                      <symbol> ) </symbol>
-                    </term>
-                  </expression>
-                  <symbol> ; </symbol>
-                </letStatement>
-                <doStatement>
-                  <keyword> do </keyword>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                  <symbol> ; </symbol>
-                </doStatement>
-                <doStatement>
-                  <keyword> do </keyword>
-                  <identifier>
-                    <name> ( </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                  <symbol> ; </symbol>
-                </doStatement>
-                <doStatement>
-                  <keyword> do </keyword>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                    <expression>
-                      <term>
-                        <integerConstant> 50 </integerConstant>
-                      </term>
-                    </expression>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                  <symbol> ; </symbol>
-                </doStatement>
-              </statements>
-              <symbol> } </symbol>
-            </whileStatement>
-          </statements>
-          <symbol> } </symbol>
-        </whileStatement>
-        <ifStatement>
-          <keyword> if </keyword>
-          <symbol> ( </symbol>
-          <expression>
-            <term>
-            </term>
-          </expression>
-          <symbol> ) </symbol>
-          <symbol> { </symbol>
-          <statements>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <integerConstant> 10 </integerConstant>
-                  </term>
-                </expression>
-                <symbol> , </symbol>
-                <expression>
-                  <term>
-                    <integerConstant> 27 </integerConstant>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                    <stringConstant> Game Over </stringConstant>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-          </statements>
-          <symbol> } </symbol>
-        </ifStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <subroutineDec>
-    <keyword> method </keyword>
-    <keyword> void </keyword>
-    <identifier>
-      <name>  </name>
-      <category> subroutine </category>
-    </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-    </parameterList>
-    <symbol> ) </symbol>
-    <subroutineBody>
-      <symbol> { </symbol>
-      <varDec>
-        <keyword> var </keyword>
-        <keyword> int </keyword>
-        <identifier>
-          <name>  </name>
-          <category> VAR </category>
-          <index> 0 </index>
-          <isDefined> True </isDefined>
-        </identifier>
-        <symbol> , </symbol>
-        <identifier>
-          <name>  </name>
-          <category> VAR </category>
-          <index> 0 </index>
-          <isDefined> True </isDefined>
-        </identifier>
-        <symbol> , </symbol>
-        <identifier>
-          <name>  </name>
-          <category> VAR </category>
-          <index> 0 </index>
-          <isDefined> True </isDefined>
-        </identifier>
-        <symbol> , </symbol>
-        <identifier>
-          <name>  </name>
-          <category> VAR </category>
-          <index> 0 </index>
-          <isDefined> True </isDefined>
-        </identifier>
-        <symbol> , </symbol>
-        <identifier>
-          <name>  </name>
-          <category> VAR </category>
-          <index> 0 </index>
-          <isDefined> True </isDefined>
-        </identifier>
-        <symbol> ; </symbol>
-      </varDec>
-      <statements>
-        <letStatement>
-          <keyword> let </keyword>
-          <identifier>
-            <name>  </name>
-            <category> VAR </category>
-            <index> 0 </index>
-            <isDefined> False </isDefined>
-          </identifier>
-          <symbol> = </symbol>
-          <expression>
-            <term>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-              </expressionList>
-              <symbol> ) </symbol>
-            </term>
-          </expression>
-          <symbol> ; </symbol>
-        </letStatement>
-        <ifStatement>
-          <keyword> if </keyword>
-          <symbol> ( </symbol>
-          <expression>
-            <term>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                </term>
-                <symbol> &gt; </symbol>
-                <term>
-                  <integerConstant> 0 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-            </term>
-            <symbol> &amp; </symbol>
-            <term>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                  <symbol> ~ </symbol>
-                  <term>
-                    <symbol> ( </symbol>
-                    <expression>
-                      <term>
-                      </term>
-                      <symbol> = </symbol>
-                      <term>
-                      </term>
-                    </expression>
-                    <symbol> ) </symbol>
-                  </term>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-            </term>
-          </expression>
-          <symbol> ) </symbol>
-          <symbol> { </symbol>
-          <statements>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> VAR </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> VAR </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                  <integerConstant> 0 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> VAR </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> VAR </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> VAR </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <letStatement>
-              <keyword> let </keyword>
-              <identifier>
-                <name>  </name>
-                <category> VAR </category>
-                <index> 0 </index>
-                <isDefined> False </isDefined>
-              </identifier>
-              <symbol> = </symbol>
-              <expression>
-                <term>
-                  <identifier>
-                    <name> . </name>
-                    <category> class </category>
-                  </identifier>
-                  <symbol> . </symbol>
-                  <identifier>
-                    <name>  </name>
-                    <category> subroutine </category>
-                  </identifier>
-                  <symbol> ( </symbol>
-                  <expressionList>
-                  </expressionList>
-                  <symbol> ) </symbol>
-                </term>
-              </expression>
-              <symbol> ; </symbol>
-            </letStatement>
-            <ifStatement>
-              <keyword> if </keyword>
-              <symbol> ( </symbol>
-              <expression>
-                <term>
-                </term>
-                <symbol> = </symbol>
-                <term>
-                  <integerConstant> 4 </integerConstant>
-                </term>
-              </expression>
-              <symbol> ) </symbol>
-              <symbol> { </symbol>
-              <statements>
-                <letStatement>
-                  <keyword> let </keyword>
-                  <identifier>
-                    <name>  </name>
-                    <category> VAR </category>
-                    <index> 0 </index>
-                    <isDefined> False </isDefined>
-                  </identifier>
-                  <symbol> = </symbol>
-                  <expression>
-                    <term>
-                      <symbol> ( </symbol>
-                      <expression>
-                        <term>
-                        </term>
-                        <symbol> &gt; </symbol>
-                        <term>
-                        </term>
-                      </expression>
-                      <symbol> ) </symbol>
-                    </term>
-                    <symbol> | </symbol>
-                    <term>
-                      <symbol> ( </symbol>
-                      <expression>
-                        <term>
-                        </term>
-                        <symbol> &lt; </symbol>
-                        <term>
-                        </term>
-                      </expression>
-                      <symbol> ) </symbol>
-                    </term>
-                  </expression>
-                  <symbol> ; </symbol>
-                </letStatement>
-                <ifStatement>
-                  <keyword> if </keyword>
-                  <symbol> ( </symbol>
-                  <expression>
-                    <term>
-                      <symbol> ~ </symbol>
-                      <term>
-                      </term>
-                    </term>
-                  </expression>
-                  <symbol> ) </symbol>
-                  <symbol> { </symbol>
-                  <statements>
-                    <ifStatement>
-                      <keyword> if </keyword>
-                      <symbol> ( </symbol>
-                      <expression>
-                        <term>
-                        </term>
-                        <symbol> &lt; </symbol>
-                        <term>
-                          <symbol> ( </symbol>
-                          <expression>
-                            <term>
-                            </term>
-                            <symbol> + </symbol>
-                            <term>
-                              <integerConstant> 10 </integerConstant>
-                            </term>
-                          </expression>
-                          <symbol> ) </symbol>
-                        </term>
-                      </expression>
-                      <symbol> ) </symbol>
-                      <symbol> { </symbol>
-                      <statements>
-                        <letStatement>
-                          <keyword> let </keyword>
-                          <identifier>
-                            <name>  </name>
-                            <category> VAR </category>
-                            <index> 0 </index>
-                            <isDefined> False </isDefined>
-                          </identifier>
-                          <symbol> = </symbol>
-                          <expression>
-                            <term>
-                              <symbol> - </symbol>
-                              <term>
-                                <integerConstant> 1 </integerConstant>
-                              </term>
-                            </term>
-                          </expression>
-                          <symbol> ; </symbol>
-                        </letStatement>
-                      </statements>
-                      <symbol> } </symbol>
-                      <keyword> else </keyword>
-                      <symbol> { </symbol>
-                      <statements>
-                        <ifStatement>
-                          <keyword> if </keyword>
-                          <symbol> ( </symbol>
-                          <expression>
-                            <term>
-                            </term>
-                            <symbol> &gt; </symbol>
-                            <term>
-                              <symbol> ( </symbol>
-                              <expression>
-                                <term>
-                                </term>
-                                <symbol> - </symbol>
-                                <term>
-                                  <integerConstant> 10 </integerConstant>
-                                </term>
-                              </expression>
-                              <symbol> ) </symbol>
-                            </term>
-                          </expression>
-                          <symbol> ) </symbol>
-                          <symbol> { </symbol>
-                          <statements>
-                            <letStatement>
-                              <keyword> let </keyword>
-                              <identifier>
-                                <name>  </name>
-                                <category> VAR </category>
-                                <index> 0 </index>
-                                <isDefined> False </isDefined>
-                              </identifier>
-                              <symbol> = </symbol>
-                              <expression>
-                                <term>
-                                  <integerConstant> 1 </integerConstant>
-                                </term>
-                              </expression>
-                              <symbol> ; </symbol>
-                            </letStatement>
-                          </statements>
-                          <symbol> } </symbol>
-                        </ifStatement>
-                      </statements>
-                      <symbol> } </symbol>
-                    </ifStatement>
-                    <letStatement>
-                      <keyword> let </keyword>
-                      <identifier>
-                        <name>  </name>
-                        <category> VAR </category>
-                        <index> 0 </index>
-                        <isDefined> False </isDefined>
-                      </identifier>
-                      <symbol> = </symbol>
-                      <expression>
-                        <term>
-                        </term>
-                        <symbol> - </symbol>
-                        <term>
-                          <integerConstant> 2 </integerConstant>
-                        </term>
-                      </expression>
-                      <symbol> ; </symbol>
-                    </letStatement>
-                    <doStatement>
-                      <keyword> do </keyword>
-                      <identifier>
-                        <name> . </name>
-                        <category> class </category>
-                      </identifier>
-                      <symbol> . </symbol>
-                      <identifier>
-                        <name>  </name>
-                        <category> subroutine </category>
-                      </identifier>
-                      <symbol> ( </symbol>
-                      <expressionList>
-                        <expression>
-                          <term>
-                          </term>
-                        </expression>
-                      </expressionList>
-                      <symbol> ) </symbol>
-                      <symbol> ; </symbol>
-                    </doStatement>
-                    <letStatement>
-                      <keyword> let </keyword>
-                      <identifier>
-                        <name>  </name>
-                        <category> VAR </category>
-                        <index> 0 </index>
-                        <isDefined> False </isDefined>
-                      </identifier>
-                      <symbol> = </symbol>
-                      <expression>
-                        <term>
-                        </term>
-                        <symbol> + </symbol>
-                        <term>
-                          <integerConstant> 1 </integerConstant>
-                        </term>
-                      </expression>
-                      <symbol> ; </symbol>
-                    </letStatement>
-                    <doStatement>
-                      <keyword> do </keyword>
-                      <identifier>
-                        <name> . </name>
-                        <category> class </category>
-                      </identifier>
-                      <symbol> . </symbol>
-                      <identifier>
-                        <name>  </name>
-                        <category> subroutine </category>
-                      </identifier>
-                      <symbol> ( </symbol>
-                      <expressionList>
-                        <expression>
-                          <term>
-                            <integerConstant> 22 </integerConstant>
-                          </term>
-                        </expression>
-                        <symbol> , </symbol>
-                        <expression>
-                          <term>
-                            <integerConstant> 7 </integerConstant>
-                          </term>
-                        </expression>
-                      </expressionList>
-                      <symbol> ) </symbol>
-                      <symbol> ; </symbol>
-                    </doStatement>
-                    <doStatement>
-                      <keyword> do </keyword>
-                      <identifier>
-                        <name> . </name>
-                        <category> class </category>
-                      </identifier>
-                      <symbol> . </symbol>
-                      <identifier>
-                        <name>  </name>
-                        <category> subroutine </category>
-                      </identifier>
-                      <symbol> ( </symbol>
-                      <expressionList>
-                        <expression>
-                          <term>
-                          </term>
-                        </expression>
-                      </expressionList>
-                      <symbol> ) </symbol>
-                      <symbol> ; </symbol>
-                    </doStatement>
-                  </statements>
-                  <symbol> } </symbol>
-                </ifStatement>
-              </statements>
-              <symbol> } </symbol>
-            </ifStatement>
-            <doStatement>
-              <keyword> do </keyword>
-              <identifier>
-                <name> . </name>
-                <category> class </category>
-              </identifier>
-              <symbol> . </symbol>
-              <identifier>
-                <name>  </name>
-                <category> subroutine </category>
-              </identifier>
-              <symbol> ( </symbol>
-              <expressionList>
-                <expression>
-                  <term>
-                  </term>
-                </expression>
-              </expressionList>
-              <symbol> ) </symbol>
-              <symbol> ; </symbol>
-            </doStatement>
-          </statements>
-          <symbol> } </symbol>
-        </ifStatement>
-        <returnStatement>
-          <keyword> return </keyword>
-          <symbol> ; </symbol>
-        </returnStatement>
-      </statements>
-      <symbol> } </symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <symbol> } </symbol>
-</class>
+function PongGame.new 0
+push constant 7
+call Memory.alloc 1
+pop pointer 0
+call Screen.clearScreen 0
+pop temp 0
+push constant 50
+pop this 6
+push constant 230
+push constant 229
+push this 6
+push constant 7
+call Bat.new 4
+pop this 0
+push constant 253
+push constant 222
+push constant 0
+push constant 511
+push constant 0
+push constant 229
+call Ball.new 6
+pop this 1
+push constant 400
+push constant 0
+push this 1
+call setDestination 2
+pop temp 0
+push constant 0
+push constant 238
+push constant 511
+push constant 240
+call Screen.drawRectangle 4
+pop temp 0
+push constant 22
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push constant 8
+call String.new 1
+push constant 83
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 0
+pop this 3
+push constant 0
+pop this 4
+push constant 0
+pop this 2
+push constant 0
+pop this 5
+return
+function PongGame.dispose 0
+push argument 0
+pop pointer 0
+push this 0
+call dispose 0
+pop temp 0
+push this 1
+call dispose 0
+pop temp 0
+call Memory.deAlloc 0
+pop temp 0
+push constant 0
+return
+function PongGame.newInstance 0
+call PongGame.new 0
+pop static 0
+push constant 0
+return
+function PongGame.getInstance 0
+push static 0
+return
+function PongGame.run 1
+push argument 0
+pop pointer 0
+label l0
+push this 3
+not
+not
+if-goto l1
+label l2
+push local 0
+push constant 0
+eq
+push this 3
+not
+and
+not
+if-goto l3
+call Keyboard.keyPressed 0
+pop local 0
+push this 0
+call move 0
+pop temp 0
+call moveBall 0
+pop temp 0
+push constant 50
+call Sys.wait 1
+pop temp 0
+goto l2
+label l3
+push local 0
+push constant 130
+eq
+not
+if-goto l4
+push constant 1
+push this 0
+call setDirection 1
+pop temp 0
+goto l5
+label l4
+push local 0
+push constant 132
+eq
+not
+if-goto l6
+push constant 2
+push this 0
+call setDirection 1
+pop temp 0
+goto l7
+label l6
+push local 0
+push constant 140
+eq
+not
+if-goto l8
+push constant 0
+not
+pop this 3
+goto l9
+label l8
+label l9
+label l7
+label l5
+label l10
+push local 0
+push constant 0
+eq
+not
+push this 3
+not
+and
+not
+if-goto l11
+call Keyboard.keyPressed 0
+pop local 0
+push this 0
+call move 0
+pop temp 0
+call moveBall 0
+pop temp 0
+push constant 50
+call Sys.wait 1
+pop temp 0
+goto l10
+label l11
+goto l0
+label l1
+push this 3
+not
+if-goto l12
+push constant 10
+push constant 27
+call Output.moveCursor 2
+pop temp 0
+push constant 9
+call String.new 1
+push constant 71
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+goto l13
+label l12
+label l13
+push constant 0
+return
+function PongGame.moveBall 5
+push argument 0
+pop pointer 0
+push this 1
+push this 1
+call move 0
+pop this 2
+push this 2
+push constant 0
+gt
+push this 2
+push this 5
+eq
+not
+and
+not
+if-goto l14
+push this 2
+pop this 5
+push constant 0
+pop local 0
+push this 0
+push this 0
+call getLeft 0
+pop local 1
+push this 0
+push this 0
+call getRight 0
+pop local 2
+push this 1
+push this 1
+call getLeft 0
+pop local 3
+push this 1
+push this 1
+call getRight 0
+pop local 4
+push this 2
+push constant 4
+eq
+not
+if-goto l15
+push local 1
+push local 4
+gt
+push local 2
+push local 3
+lt
+or
+pop this 3
+push this 3
+not
+not
+if-goto l16
+push local 4
+push local 1
+push constant 10
+add
+lt
+not
+if-goto l17
+push constant 1
+neg
+pop local 0
+goto l18
+label l17
+push local 3
+push local 2
+push constant 10
+sub
+gt
+not
+if-goto l19
+push constant 1
+pop local 0
+goto l20
+label l19
+label l20
+label l18
+push this 6
+push constant 2
+sub
+pop this 6
+push this 6
+push this 0
+call setWidth 1
+pop temp 0
+push this 4
+push constant 1
+add
+pop this 4
+push constant 22
+push constant 7
+call Output.moveCursor 2
+pop temp 0
+push this 4
+call Output.printInt 1
+pop temp 0
+goto l21
+label l16
+label l21
+goto l22
+label l15
+label l22
+push local 0
+push this 1
+call bounce 1
+pop temp 0
+goto l23
+label l14
+label l23
+push constant 0
+return
