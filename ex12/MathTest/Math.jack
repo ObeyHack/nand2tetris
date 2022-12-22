@@ -39,6 +39,7 @@ class Math {
             // 5.      let sum = sum + shiftedx
             // 6.   let shiftedx = 2*shiftedx
             // 7. return sum
+            
 
         }
 
@@ -69,6 +70,7 @@ class Math {
             // 2. for j = (n/2 - 1) ... 0 do
             // 3.   if ((y + 2**j)**2 <= x) then let y = y + 2**j
             // 4. return y
+
         }
 
         /** Returns the greater number. */
