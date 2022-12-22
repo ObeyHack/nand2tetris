@@ -11,10 +11,17 @@
 class Math {
         /** Initializes the library. */
         function void init() {
+
         }
 
         /** Returns the absolute value of x. */
         function int abs(int x) {
+            if(x<0)
+            {return -x;}
+            if(x>0)
+            {return  x;}
+            // should do another return?
+            // return x;
         }
 
         /** 
@@ -32,6 +39,7 @@ class Math {
             // 5.      let sum = sum + shiftedx
             // 6.   let shiftedx = 2*shiftedx
             // 7. return sum
+
         }
 
         /** 
@@ -65,9 +73,17 @@ class Math {
 
         /** Returns the greater number. */
         function int max(int a, int b) {
+            if(a>b)
+            {return a;}
+            return b;
         }
 
         /** Returns the smaller number. */
         function int min(int a, int b) {
+            if(a<b)
+            {
+                return a;
+            }
+            return b;
         }
 }
