@@ -34,20 +34,8 @@ class Sys {
 
     /** Waits approximately duration milliseconds and returns.  */
     function void wait(int duration) {
-        var int iter, i, j, const;
-        let const = 30000;
-        let iter = 3;
-        let i = 0;
-        let j = 0;
         while (duration > 0) {
-            while (j < iter) {
-                while (i < const) {
-                    let i = i + 1;
-                }
-                let i = 0;
-                let j = j + 1;
-            }
-
+            do Sys.wait(1);
             let duration = duration - 1;
         }
         return;
