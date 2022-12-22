@@ -28,6 +28,9 @@ class String {
 
     /** Disposes this string. */
     method void dispose() {
+        if (length > 0){
+            do Array.dispose(str);
+        }
         do Memory.deAlloc(this);
         return;
     }
@@ -75,20 +78,32 @@ class String {
         var int val;
         var int d;
         var int i;
-
+        var char minus;
+        var int isMinus;
         let val = 0;
         let d = 0;
         let i = 0;
+        let minus = 45;
+        let isMinus = 0;
+        
+        if (str[0] = minus) {
+            let isMinus = 1;
+            let i = 1;
+        }
 
         while (i < length){
-            /**
-            if ((str[i] < 48) || (str[i] > 57)) {
-                return val;
+            if ((str[i] < 48) & (str[i] > 57)) {
+               let i = length; 
             }
-            **/
-            let d = charToInt(str[i]);
-            let val = (val * 10) + d;
-            let i = i + 1;
+            else {
+                let d = charToInt(str[i]);
+                let val = (val * 10) + d;
+                let i = i + 1;
+            }
+        }
+
+        if (isMinus = 1) {
+            let val = val * -1;
         }
         return val;
     }
@@ -106,35 +121,33 @@ class String {
         // 4.   return c (as a string)
         // 5. else
         // 6.   return int2String(val / 10).appendChar(c)
-        var String s;
-        var int i;
-        let s = int2String(val);
-        while (i < s.length()) {
-            let str[i] = s.charAt(i);
-            let i = i + 1;
+
+
+        let length = 0;
+        if (val < 0) {
+            do appendChar(45); // 45 is the ascii code for '-'
+            let val = val * (-1); 
         }
-        let length = s.length();
+
+        do int2String(val); 
         return;
     }
     
-    method String int2String(int val) {
+    method void int2String(int val) {
         var int lastDigit;
         var char c;
-        var String s;
-        var String holder;
 
-        let lastDigit = val - (10 * (val/10));
-        let c = intToChar(lastDigit);
+        let lastDigit = val - (10 * (val/10)); 
+        let c = intToChar(lastDigit); 
+
         if (val < 10) {
-            let s = String.new(1);
-            let s = s.appendChar(c);
-            return s;
+            do appendChar(c); 
         }
         else {
-            let holder = int2String(val / 10);
-            let s = holder.appendChar(c);
-            return s;
+            do int2String(val / 10);
+            do appendChar(c);
         }
+        return;
     }
 
 
