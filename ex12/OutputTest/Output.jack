@@ -20,13 +20,14 @@ class Output {
 
     // Character map for displaying characters
     static Array charMaps; 
-    field int cursorHeight, cursorWidth; // Cursor position
+    static int cursorHeight, cursorWidth; // Cursor position
 
     /** Initializes the screen, and locates the cursor at the screen's top-left. */
     function void init() {
-        cursorHeight = 0;
-        cursorWidth = 0;
-        initMap();
+        let cursorHeight = 0;
+        let cursorWidth = 0;
+        do Output.initMap();
+        return;
     }
 
     // Initializes the character map array
@@ -184,6 +185,7 @@ class Output {
     function void moveCursor(int i, int j) {
         let cursorHeight = i;
         let cursorWidth = j;
+        return;
     }
 
     /** Displays the given character at the cursor location,
@@ -202,7 +204,7 @@ class Output {
         let fontHeight = 11;
         let fontWidth = 8;
         let row = 0;
-        let map = getMap(c);
+        let map = Output.getMap(c);
         
         while (row < fontHeight){
             let rowVal = map[row];
@@ -210,9 +212,9 @@ class Output {
             let col = 0;
             while (col < fontWidth){
                 let val = Math.bit(rowVal, col);
-                if (val = true) {
+                if (val = (-1)) {
                     do Screen.setPixel(cursorHeight, cursorWidth);
-                    do Output.advancesCursor()
+                    do Output.advancesCursor();
                 }
                 let col = col + 1;
             }
@@ -242,7 +244,7 @@ class Output {
         var int index;
         let index=0;
         while(index < s.length()){
-            do printChar(s.charAt(index));
+            do Output.printChar(s.charAt(index));
             let index = index+  1;
         }
         return;
@@ -253,8 +255,8 @@ class Output {
     function void printInt(int i) {
         var String s;
         let s = String.new(16);
-        let s = String.setInt(i);
-        do printString(s);
+        let s = s.setInt(i);
+        do Output.printString(s);
         do s.dispose();
         return;
     }
