@@ -6,8 +6,8 @@
 /** Test program for the OS Output class. */
 class Main {
 
-    /** Outputs the entire character set to the screen using all the
-     *  methods of the Output class. */
+    /**Outputs the entire character set to the screen using all the
+     *  methods of the Output class. */ 
     function void main() {
         var String s;
     

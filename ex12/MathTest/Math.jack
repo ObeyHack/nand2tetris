@@ -14,6 +14,10 @@ class Math {
 
         }
 
+        function boolean bit (int x, int i){
+            return false;
+        }
+
         /** Returns the absolute value of x. */
         function int abs(int x) {
             if(x<0)
@@ -39,6 +43,7 @@ class Math {
             // 5.      let sum = sum + shiftedx
             // 6.   let shiftedx = 2*shiftedx
             // 7. return sum
+            
             
 
         }

@@ -39,6 +39,8 @@ class Screen {
             //    to the pixel to the current color.
             // 4. Use Memory.poke to write the modified 16-bit value to the RAM
             // address.
+            
+
         }
 
         /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
