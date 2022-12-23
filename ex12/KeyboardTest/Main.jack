@@ -12,7 +12,7 @@ class Main {
     	var String s;
     	var int i;
     	var boolean ok;
-    
+
         let ok = false;
         do Output.printString("keyPressed test:");
         do Output.println();
