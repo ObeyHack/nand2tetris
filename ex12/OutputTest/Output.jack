@@ -20,12 +20,12 @@ class Output {
 
     // Character map for displaying characters
     static Array charMaps; 
-    static int cursorHeight, cursorWidth; // Cursor position
+    static int cursorX, cursorY; // Cursor position
 
     /** Initializes the screen, and locates the cursor at the screen's top-left. */
     function void init() {
-        let cursorHeight = 0;
-        let cursorWidth = 0;
+        let cursorX = 0;
+        let cursorY = 0;
         do Output.initMap();
         return;
     }
@@ -183,8 +183,8 @@ class Output {
     /** Moves the cursor to the j-th column of the i-th row,
      *  and erases the character displayed there. */
     function void moveCursor(int i, int j) {
-        let cursorHeight = i;
-        let cursorWidth = j;
+        let cursorX = i;
+        let cursorY = j;
         return;
     }
 
@@ -195,45 +195,56 @@ class Output {
         // For example, you can draw multiple pixels at once, for each row.
         var Array map;
         var int row;
-        var int rowVal;
-        var int col;
-        var boolean val;
+        var int val;
         var int fontHeight;
-        var int fontWidth;
-
+        
         let fontHeight = 11;
-        let fontWidth = 8;
+        
         let row = 0;
         let map = Output.getMap(c);
         
         while (row < fontHeight){
-            let rowVal = map[row];
+            let val = map[row];
 
-            let col = 0;
-            while (col < fontWidth){
-                let val = Math.bit(rowVal, col);
-                if (val = (-1)) {
-                    do Screen.setPixel(cursorHeight, cursorWidth);
-                    do Output.advancesCursor();
-                }
-                let col = col + 1;
-            }
-            
+            do Memory.poke(Output.getAddress(), val);
             let row = row + 1;
         }
 
         return;
     }
 
+    function int getAddress(){
+        var int screenAddress;
+        var int fontWidth;
+        var int fontHeight;
+        var int graphicsHeight;
+        var int graphicsWidth;
+        var int x;
+        var int y;
+
+        let screenAddress = 16384;
+        let graphicsHeight = 256;
+        let graphicsWidth = 512;
+        let fontWidth = 8;
+        let fontHeight = 11;
+
+        let y = cursorY * fontWidth;
+        let x = cursorX * fontHeight;
+ 
+
+        return screenAddress + (y * 32) + (x / 16);
+
+    }
+
     function void advancesCursor() {
-        let cursorWidth = cursorWidth + 1;
-        if (cursorWidth > 63) {
-            let cursorWidth = 0;
-            let cursorHeight = cursorHeight + 1;
+        let cursorY = cursorY + 1;
+        if (cursorY > 63) { // they are only 64 columns
+            let cursorY = 0;
+            let cursorX = cursorX + 1;
         }
 
-        if (cursorHeight > 22) {
-            let cursorHeight = 0;
+        if (cursorX > 22) { // they are only 23 rows
+            let cursorX = 0;
         }
         return;
     }
@@ -263,27 +274,27 @@ class Output {
 
     /** Advances the cursor to the beginning of the next line. */
     function void println() {
-        if (cursorWidth > 63) {
-            let cursorWidth = 0;
-            let cursorHeight = cursorHeight + 1;
+        if (cursorY > 63) {
+            let cursorY = 0;
+            let cursorX = cursorX + 1;
         }
 
-        if (cursorHeight > 22) {
-            let cursorHeight = 0;
+        if (cursorX > 22) {
+            let cursorX = 0;
         }
         return;
     }
 
     /** Moves the cursor one column back. */
     function void backSpace() {
-        let cursorWidth = cursorWidth - 1;
-        if (cursorWidth < 0) {
-            let cursorWidth = 63;
-            let cursorHeight = cursorHeight - 1;
+        let cursorY = cursorY - 1;
+        if (cursorY < 0) {
+            let cursorY = 63;
+            let cursorX = cursorX - 1;
         }
 
-        if (cursorHeight < 0) {
-            let cursorHeight = 22;
+        if (cursorX < 0) {
+            let cursorX = 22;
         }
         return;
     }
