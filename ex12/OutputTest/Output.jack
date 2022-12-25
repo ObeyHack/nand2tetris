@@ -219,13 +219,13 @@ class Output {
         var int i;
 
         let x = cursorX * 8; // 11 is the height of a character
-        let i = x - (x / 16) * 16; // i is the position of the first pixel in the byte
+        let i = x - ((x / 16) * 16); // i is the position of the first pixel in the byte
         
         if (i = 0) {
             let value = (value & (-256)) + charValue; // -256 = 1111111100000000
         } 
         else {
-            let value = (value & 255) + (Output.shift8(charValue)); // 255 = 0000000011111111 // 256 = 2 ^ 8
+            let value = (value & 255) + (charValue * 256); // 255 = 0000000011111111 // 256 = 2 ^ 8
         }   
         do Memory.poke(16384 + address, value); // 16384 is the start of the screen
 
@@ -282,7 +282,7 @@ class Output {
     function void printInt(int i) {
         var String s;
         let s = String.new(16);
-        let s = s.setInt(i);
+        do s.setInt(i);
         do Output.printString(s);
         do s.dispose();
         return;

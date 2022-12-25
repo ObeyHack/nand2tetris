@@ -1536,9 +1536,9 @@ push local 0
 push local 0
 push constant 16
 call Math.divide 2
-sub
 push constant 16
 call Math.multiply 2
+sub
 pop local 1
 push local 1
 push constant 0
@@ -1559,7 +1559,8 @@ push argument 1
 push constant 255
 and
 push argument 2
-call Output.shift8 1
+push constant 256
+call Math.multiply 2
 add
 pop argument 1
 label IF_END0
@@ -1669,7 +1670,7 @@ pop local 0
 push local 0
 push argument 0
 call String.setInt 2
-pop local 0
+pop temp 0
 push local 0
 call Output.printString 1
 pop temp 0
