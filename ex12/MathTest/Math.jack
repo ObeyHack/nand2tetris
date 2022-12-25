@@ -145,7 +145,8 @@ class Math {
             while (j > (-1)){ // 0 <= j <= 7
                 let power2 = Math.powerOf2(j); // power2 = 2**j
                 let squared = Math.squared(y + power2); // squared = (y + 2**j)**2
-                if ((squared < x + 1) & (squared > 0)){ // (y + 2**j)**2 <= x
+                // (y + 2**j)**2 <= x, x = 32767 is the max value of an int, squared > 0 is to avoid overflow
+                if (((squared < (x + 1)) | (x = 32767)) & (squared > 0)){ 
                     let y = y + power2; // y = y + 2**j
                 }
                 let j = j - 1;

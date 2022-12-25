@@ -193,9 +193,13 @@ call Math.squared 1
 pop local 4
 push local 4
 push argument 0
-lt
 push constant 1
 add
+lt
+push argument 0
+push constant 32767
+eq
+or
 push local 4
 push constant 0
 gt
