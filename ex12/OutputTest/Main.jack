@@ -10,10 +10,11 @@ class Main {
      *  methods of the Output class. */ 
     function void main() {
         var String s;
-    
+
     	let s = String.new(1);
     	do s.appendChar(String.doubleQuote());
-    
+
+        
         do Output.moveCursor(0, 63);
         do Output.printChar(66); // B
         do Output.moveCursor(22, 0);
@@ -22,13 +23,16 @@ class Main {
         do Output.printChar(68); // D
         do Output.printChar(65); // A
         
+        
         do Output.moveCursor(2, 0); 
         do Output.printString("0123456789"); 
         do Output.println(); 
         
+        
         do Output.printString("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz");
         do Output.println();
         
+        /**
         do Output.printString("!#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
         do Output.printString(s);
         do Output.println();
@@ -37,6 +41,7 @@ class Main {
         do Output.backSpace();
         do Output.printInt(6789);
         
+        **/
         return;
     }
 }

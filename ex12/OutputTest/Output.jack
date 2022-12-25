@@ -78,7 +78,8 @@ class Output {
         do Output.create(64,30,51,51,59,59,59,27,3,30,0,0);  // @
         do Output.create(63,30,51,51,24,12,12,0,12,12,0,0);  // ?
 
-        do Output.create(65,0,0,0,0,0,0,0,0,0,0,0);          // A ** TO BE FILLED **
+        
+        do Output.create(65,12,30,51,51,63,51,51,51,51,0,0); // A
         do Output.create(66,31,51,51,51,31,51,51,51,31,0,0); // B
         do Output.create(67,28,54,35,3,3,3,35,54,28,0,0);    // C
         do Output.create(68,15,27,51,51,51,51,51,27,15,0,0); // D
@@ -138,7 +139,6 @@ class Output {
         do Output.create(120,0,0,0,51,30,12,12,30,51,0,0);     // x
         do Output.create(121,0,0,0,51,51,51,62,48,24,15,0);    // y
         do Output.create(122,0,0,0,63,27,12,6,51,63,0,0);      // z
-        
         do Output.create(123,56,12,12,12,7,12,12,12,56,0,0);   // {
         do Output.create(124,12,12,12,12,12,12,12,12,12,0,0);  // |
         do Output.create(125,7,12,12,12,56,12,12,12,7,0,0);    // }
@@ -183,8 +183,8 @@ class Output {
     /** Moves the cursor to the j-th column of the i-th row,
      *  and erases the character displayed there. */
     function void moveCursor(int i, int j) {
-        let cursorX = i;
-        let cursorY = j;
+        let cursorX = j;
+        let cursorY = i;
         return;
     }
 
@@ -195,56 +195,72 @@ class Output {
         // For example, you can draw multiple pixels at once, for each row.
         var Array map;
         var int row;
-        var int val;
-        var int fontHeight;
-        
-        let fontHeight = 11;
-        
+        var int charValue;
+        var int value;
+        var int adress;
+
         let row = 0;
         let map = Output.getMap(c);
         
-        while (row < fontHeight){
-            let val = map[row];
-
-            do Memory.poke(Output.getAddress(), val);
+        while (row < 11){ // fontHeight
+            let charValue = map[row];
+            let adress = Output.getAddress(row);
+            let value = Memory.peek(16384 + adress); // 16384 is the start of the screen
+            do Output.drawChar(adress, value, charValue);
             let row = row + 1;
         }
+        do Output.advancesCursor();
 
         return;
     }
 
-    function int getAddress(){
-        var int screenAddress;
-        var int fontWidth;
-        var int fontHeight;
-        var int graphicsHeight;
-        var int graphicsWidth;
+    function void drawChar(int address, int value, int charValue){
+        var int x;
+        var int i;
+
+        let x = cursorX * 8; // 11 is the height of a character
+        let i = x - (x / 16) * 16; // i is the position of the first pixel in the byte
+        
+        if (i = 0) {
+            let value = (value & (-256)) + charValue; // -256 = 1111111100000000
+        } 
+        else {
+            let value = (value & 255) + (Output.shift8(charValue)); // 255 = 0000000011111111 // 256 = 2 ^ 8
+        }   
+        do Memory.poke(16384 + address, value); // 16384 is the start of the screen
+
+        return;
+    }
+
+    function int shift8(int value){
+        var int i;
+        let i = 0;
+        while (i < 8){
+            let value = ^value;
+            let i = i + 1;
+        }
+        return value;
+    }
+
+    function int getAddress(int yOffset){
         var int x;
         var int y;
 
-        let screenAddress = 16384;
-        let graphicsHeight = 256;
-        let graphicsWidth = 512;
-        let fontWidth = 8;
-        let fontHeight = 11;
-
-        let y = cursorY * fontWidth;
-        let x = cursorX * fontHeight;
- 
-
-        return screenAddress + (y * 32) + (x / 16);
-
+        let x = (cursorX * 8); // 11 is the height of a character
+        let y = (cursorY * 11) + yOffset; // 8 is the width of a character
+         
+        return (y * 32) + (x / 16);
     }
 
     function void advancesCursor() {
-        let cursorY = cursorY + 1;
-        if (cursorY > 63) { // they are only 64 columns
-            let cursorY = 0;
-            let cursorX = cursorX + 1;
+        let cursorX = cursorX + 1;
+        if (cursorX > 63) { // they are only 64 columns
+            let cursorX = 0;
+            let cursorY = cursorY + 1;
         }
 
-        if (cursorX > 22) { // they are only 23 rows
-            let cursorX = 0;
+        if (cursorY > 22) { // they are only 23 rows
+            let cursorY = 0;
         }
         return;
     }
@@ -253,10 +269,10 @@ class Output {
      *  and advances the cursor appropriately. */
     function void printString(String s) {
         var int index;
-        let index=0;
+        let index = 0;
         while(index < s.length()){
             do Output.printChar(s.charAt(index));
-            let index = index+  1;
+            let index = index +  1;
         }
         return;
     }
@@ -274,26 +290,23 @@ class Output {
 
     /** Advances the cursor to the beginning of the next line. */
     function void println() {
-        if (cursorY > 63) {
+        let cursorY = cursorY + 1;
+        let cursorX = 0;
+        if (cursorY > 22) {
             let cursorY = 0;
-            let cursorX = cursorX + 1;
-        }
-
-        if (cursorX > 22) {
-            let cursorX = 0;
         }
         return;
     }
 
     /** Moves the cursor one column back. */
     function void backSpace() {
-        let cursorY = cursorY - 1;
-        if (cursorY < 0) {
-            let cursorY = 63;
-            let cursorX = cursorX - 1;
+        let cursorX = cursorX - 1;
+        if (cursorX < 0) {
+            let cursorX = 63;
+            let cursorY = cursorY - 1;
         }
 
-        if (cursorX < 0) {
+        if (cursorY < 0) {
             let cursorX = 22;
         }
         return;
