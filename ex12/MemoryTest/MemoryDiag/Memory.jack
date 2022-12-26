@@ -62,26 +62,37 @@ class Memory {
             return (-1);
         }
 
-        let block = firstFit + heap[firstFit] - size + 1; // needed part of the found segment
+        if (heap[firstFit] = (size + 1)) { // if the segment remainder is too small
+            let freeList = heap[firstFit + 1]; // Update freeList to reflect the allocation
+            let block = firstFit + 1; // needed part of the found segment
+        }
+        else {
+            let block = firstFit + heap[firstFit] - size + 1; // needed part of the found segment
+        }
+
+        let heap[block] = 0; // Initialize the block
         let heap[block - 1] = size + 1; // Remember block size, for de-allocation
-        let heap[firstFit] = heap[firstFit] - (size + 1); // Update freeList to reflect the allocation
+
+        if (~(heap[firstFit] = (size + 1))) { // if the segment is not to small
+            let heap[firstFit] = heap[firstFit] - size - 1; // Update freeList to reflect the allocation
+        }
 
         return block + 2048;
     }
 
     function int firstFit(int size) {
-        var int address;
-        let address = freeList;
+        var int heapAddress;
+        let heapAddress = freeList - 2048; // address of the first segment in the freeList
 
-        if (freeList = 2048){ // if freeList is empty
-            return 0;
+        if ((heap[heapAddress] + 1) > size){ // if freeList is empty
+            return heapAddress;
         }     
 
-        while (~((heap[address + 1]) = 0)) { // while next != null
-            if (heap[address] > size) { // if segment.length > size
-                return address - 2048; // return the address of the segment in the heap
+        while (~((heap[heapAddress + 1]) = -2048)) { // while next != null
+            if ((heap[heapAddress] + 1) > size) { // segment.size >= size
+                return heapAddress; // return the address of the segment in the heap
             }
-            let address = heap[address];
+            let heapAddress = heap[heapAddress + 1] - 2048; // address of the next segment in the freeList
         }
         return (-1); // no such segment is found 
     }
@@ -96,7 +107,7 @@ class Memory {
         var int segment;
         let next = freeList;
         let segment = o - 1 - 2048;
-        let freeList = segment;
+        let freeList = o - 1;
         let heap[segment + 1] = next;
         return;
     }    

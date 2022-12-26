@@ -59,6 +59,7 @@ class Main {
         do Main.checkOverlap(b, 3, a, 3);
         let out[0] = 33;
 
+        do Output.printString("pass 2");
         // Allocate a memory block.
         // Validate that the returned block is entirely within the heap,
         // and that it does not overlap blocks 'a' or 'b'.
@@ -76,6 +77,9 @@ class Main {
         do Main.checkOverlap(c, 500, b, 3);
         let out[0] = 44;
 
+        do Output.printString("pass 3");
+
+
         // Deallocate blocks 'a' and 'b', retaining 'c'.
         //
         // Common failure: free list corrupted by deAlloc().
@@ -87,6 +91,7 @@ class Main {
         do Memory.deAlloc(b);
         let out[0] = 52;
 
+        do Output.printString("pass 4");
         // Allocate a memory block.
         // Validate that the returned block is entirely within the heap,
         // and that it does not overlap blocks 'c'.
@@ -98,12 +103,15 @@ class Main {
         let b = Memory.alloc(3);
         let out[6] = b;                     // RAM[17006] = block address
 
+        do Output.printString("pass 4.1");
+
         let out[0] = 61;
         do Main.checkRange(b, 3);
         let out[0] = 62;
         do Main.checkOverlap(b, 3, c, 500);
         let out[0] = 63;
 
+        do Output.printString("pass 5");
         // Deallocate blocks 'b' and 'c'.
 
         let out[0] = 70;
