@@ -1,6 +1,9 @@
-function Main.main 2
+function Main.main 3
 push constant 0
 pop local 0
+push constant 3000
+call Array.new 1
+pop local 2
 label WHILE_EXP0
 push local 0
 push constant 1000
@@ -19,6 +22,9 @@ add
 pop local 0
 goto WHILE_EXP0
 label WHILE_END0
+push local 2
+call Array.dispose 1
+pop temp 0
 push constant 8000
 push constant 333
 call Memory.poke 2
