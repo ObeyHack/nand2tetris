@@ -57,6 +57,32 @@ neg
 return
 label IF_FALSE0
 push local 0
+push static 2
+add
+pop pointer 1
+push that 0
+push argument 0
+push constant 1
+add
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 0
+push constant 1
+add
+push static 2
+add
+pop pointer 1
+push that 0
+pop static 1
+push local 0
+push constant 1
+add
+pop local 1
+goto IF_END1
+label IF_FALSE1
+push local 0
 push local 0
 push static 2
 add
@@ -68,6 +94,15 @@ sub
 push constant 1
 add
 pop local 1
+label IF_END1
+push local 1
+push static 2
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 1
 push constant 1
 sub
@@ -80,6 +115,19 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
+push local 0
+push static 2
+add
+pop pointer 1
+push that 0
+push argument 0
+push constant 1
+add
+eq
+not
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
 push local 0
 push static 2
 add
@@ -89,27 +137,36 @@ add
 pop pointer 1
 push that 0
 push argument 0
+sub
 push constant 1
-add
 sub
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
+label IF_FALSE2
 push local 1
 push constant 2048
 add
 return
 function Memory.firstFit 1
 push static 1
-pop local 0
-push static 1
 push constant 2048
-eq
+sub
+pop local 0
+push local 0
+push static 2
+add
+pop pointer 1
+push that 0
+push constant 1
+add
+push argument 0
+gt
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push constant 0
+push local 0
 return
 label IF_FALSE0
 label WHILE_EXP0
@@ -120,7 +177,8 @@ push static 2
 add
 pop pointer 1
 push that 0
-push constant 0
+push constant 2048
+neg
 eq
 not
 not
@@ -130,21 +188,25 @@ push static 2
 add
 pop pointer 1
 push that 0
+push constant 1
+add
 push argument 0
 gt
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
 push local 0
-push constant 2048
-sub
 return
 label IF_FALSE1
 push local 0
+push constant 1
+add
 push static 2
 add
 pop pointer 1
 push that 0
+push constant 2048
+sub
 pop local 0
 goto WHILE_EXP0
 label WHILE_END0
@@ -160,7 +222,9 @@ sub
 push constant 2048
 sub
 pop local 1
-push local 1
+push argument 0
+push constant 1
+sub
 pop static 1
 push local 1
 push constant 1
