@@ -1,0 +1,38 @@
+// Written by Itai Hajaj, Nand 2022 semester A, Itai.Hajaj@huji.mail.ac.il
+/*
+Instruction:
+Run your compiled code by VMEmulator and the program will print your code solution
+*/
+
+class Main {
+	function void main() {
+		var int n7, n20, n8, n13, n9;
+		let n7 = 7;
+		let n20 = 20;
+		let n8 = 8;
+		let n13 = 13;
+		let n9 = 9;
+
+		let n7 = ^n7;
+        do Output.printString("shiftleft of 7 is 14, your program returned: ");
+		do Output.printInt(n7);
+        do Output.println();
+		let n20 = ^n20;
+        do Output.printString("shiftleft of 20 is 40, your program returned: ");
+		do Output.printInt(n20);
+		do Output.println();
+        let n8 = #n8;
+        do Output.printString("shiftright of 8 is 4, your program returned: ");
+		do Output.printInt(n8);
+		do Output.println();
+		let n13 = #n13;
+		do Output.printString("shiftright of 13 is 6, your program returned: ");
+		do Output.printInt(n13);
+        do Output.println();
+		let n9 = #n9;
+		do Output.printString("shiftright of 9 is 4, your program returned: ");
+		do Output.printInt(n9);
+        do Output.println();
+		return;
+		}
+}
