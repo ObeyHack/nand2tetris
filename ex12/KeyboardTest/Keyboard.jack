@@ -177,7 +177,7 @@ class Keyboard {
             if (minus = 1) {
                 let intMassage = intMassage * -1;
             }
-            do str.dipose();
+            do str.dispose();
             return intMassage;
         }
 }

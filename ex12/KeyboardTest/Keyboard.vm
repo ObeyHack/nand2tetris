@@ -216,7 +216,7 @@ call Math.multiply 2
 pop local 1
 label IF_FALSE6
 push local 0
-call String.dipose 1
+call String.dispose 1
 pop temp 0
 push local 1
 return
