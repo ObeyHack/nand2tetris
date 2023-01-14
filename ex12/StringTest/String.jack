@@ -29,7 +29,7 @@ class String {
     /** Disposes this string. */
     method void dispose() {
         if (length > 0){
-            do Array.dispose(str);
+            do str.dispose();
         }
         do Memory.deAlloc(this);
         return;
