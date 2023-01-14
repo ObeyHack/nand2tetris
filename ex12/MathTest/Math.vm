@@ -1,4 +1,7 @@
 function Math.init 2
+push constant 1
+call Array.new 1
+pop static 1
 push constant 16
 call Array.new 1
 pop static 0
@@ -92,6 +95,14 @@ label WHILE_END0
 push local 0
 return
 function Math.divide 5
+push constant 0
+push static 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push argument 0
 call Math.abs 1
 pop local 3
@@ -100,7 +111,8 @@ call Math.abs 1
 pop local 4
 push local 3
 push local 4
-call Math.divideHelper 2
+push static 1
+call Math.divideHelper 3
 pop local 2
 push argument 0
 push constant 0
@@ -145,15 +157,15 @@ label IF_FALSE0
 push argument 0
 push argument 1
 shiftleft
-call Math.divideHelper 2
+push argument 2
+call Math.divideHelper 3
 pop local 0
-push local 0
-push argument 1
-call Math.multiply 2
-shiftleft
-pop local 1
 push argument 0
-push local 1
+push constant 0
+push argument 2
+add
+pop pointer 1
+push that 0
 sub
 push argument 1
 lt
@@ -165,6 +177,20 @@ shiftleft
 return
 goto IF_END1
 label IF_FALSE1
+push constant 0
+push argument 2
+add
+push constant 0
+push argument 2
+add
+pop pointer 1
+push that 0
+push argument 1
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0
 shiftleft
 push constant 1

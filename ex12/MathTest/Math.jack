@@ -11,13 +11,16 @@
 class Math {
         /** Initializes the library. */
         static Array bits;
+        static Array sum;
 
         function void init() { 
             var int i;
             var int val;
+            let sum = Array.new(1);
             let bits = Array.new(16);
             let i = 0;
             let val = 1;
+            
 
             while(i < 16){
                 let bits[i] = val;
@@ -94,33 +97,34 @@ class Math {
             var int result;
             var int x2, y2;
 
+            let sum[0] = 0;
             let x2 = Math.abs(x);
             let y2 = Math.abs(y);
-            let result = Math.divideHelper(x2, y2);
-
+            let result = Math.divideHelper(x2, y2, sum);
             if (((x > 0) & (y > 0)) | ((x < 0) & (y < 0))) {
                 return result;
             }
             else {
                 return -result;
             }
+            
         }
 
 
-        function int divideHelper(int x, int y) {
+        function int divideHelper(int x, int y, Array sum) {
             var int q;
             var int mult;
 
             if ((y > x) | (y < 0)) {
                 return 0;
             }
-            let q = Math.divideHelper(x, ^y); // q = divide(x, 2*y)
+            let q = Math.divideHelper(x, ^y, sum); // q = divide(x, 2*y)
 
-            let mult = ^(Math.multiply(q, y)); // mult = 2*q*y
-            if ((x - mult) < y) { // x - 2*q*y < y
+            if ((x - sum[0]) < y) { // x - 2*q*y < y
                 return ^q; // q = 2*q
             }
             else {
+                let sum[0] = sum[0] + y;
                 return (^q) + 1;  // q = 2*q + 1;
             }
         }
