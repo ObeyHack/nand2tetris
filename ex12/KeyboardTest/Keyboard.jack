@@ -129,7 +129,7 @@ class Keyboard {
         function int readInt(String message) {
             // This should behave exactly like the built-in OS.    
             var String str;
-            var  int intMassage; 
+            var int intMassage; 
             var char c;
             var int condition;
             var int minus;
@@ -177,6 +177,7 @@ class Keyboard {
             if (minus = 1) {
                 let intMassage = intMassage * -1;
             }
+            do str.dipose();
             return intMassage;
         }
 }

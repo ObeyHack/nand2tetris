@@ -238,6 +238,52 @@ push temp 0
 pop that 0
 push constant 0
 return
-function Memory.max 0
+function Memory.max 3
+push constant 1
+neg
+push argument 0
+add
+pop pointer 1
+push that 0
+push constant 1
+sub
+pop local 2
 push constant 0
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 1
+pop local 1
+label WHILE_EXP0
+push local 1
+push local 2
+lt
+not
+if-goto WHILE_END0
+push local 1
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 0
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 1
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 0
+label IF_FALSE0
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+push local 0
 return
