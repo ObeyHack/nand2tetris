@@ -16,8 +16,9 @@ class Sys {
         // 2. do Main.main()
         // 3. do Sys.halt()
         do Memory.init();
-        do Screen.init();
+        do Math.init();
         do Keyboard.init();
+        do Screen.init();
         do Output.init();
         do Main.main();
         do Sys.halt();

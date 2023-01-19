@@ -199,15 +199,30 @@ class Output {
         var int value;
         var int adress;
 
+        if (c = String.backSpace()){
+            do Output.backSpace();
+        }
+
+
+        if (c = String.newLine()){
+            do Output.println();
+            return;
+        }
         let row = 0;
         let map = Output.getMap(c);
-        
+        if (c = String.backSpace()){
+            let map = Output.getMap(32);
+        }
         while (row < 11){ // fontHeight
             let charValue = map[row];
             let adress = Output.getAddress(row);
             let value = Memory.peek(16384 + adress); // 16384 is the start of the screen
             do Output.drawChar(adress, value, charValue);
             let row = row + 1;
+        }
+
+        if (c = String.backSpace()){
+            return;
         }
         do Output.advancesCursor();
 
