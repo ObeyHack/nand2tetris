@@ -1,0 +1,21 @@
+
+class Main {
+
+    function void main() {
+        var Array a;
+        var Array b;
+        let a = Array.new(3);
+        let a[0] = 1;
+        let a[1] = 5;
+        let a[2] = 6;
+        do Output.printInt(Memory.max(a));
+        do Output.println();
+
+        let b = Array.new(3);
+        let b[0] = 2;
+        let b[1] = 4;
+        let b[2] = 3;
+        do Output.printInt(Memory.max(b));
+        return;
+    }
+}
